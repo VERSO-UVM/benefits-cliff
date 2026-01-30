@@ -23,7 +23,8 @@ def remove_dollars(df: pd.DataFrame, column_name: str):
 
 def clean_fpl_df():
     """
-    Hardcoded clean of federal poverty limit df from https://dcf.vermont.gov/benefits/3SquaresVT/income-guidelines.
+    Hardcoded clean of federal poverty limit df from
+    https://dcf.vermont.gov/benefits/3SquaresVT/income-guidelines.
     """
     df = pd.read_csv("src/data/fpl-monthly-2025_raw.csv", index_col=False)
     remove_dollars(df, "Expanded Gross Monthly Income (185% of FPL)")

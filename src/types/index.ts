@@ -1,7 +1,21 @@
-export interface HouseholdData {
+export interface RawHouseholdData {
   annualIncome: number;
   adults: number;
   children: number;
+}
+
+interface Deduction {
+  name: string;
+  value: number;
+}
+
+export interface ProcessedHouseholdData {
+  grossMonthlyIncome: number;
+  netMonthlyIncome: number;
+  adults: number;
+  children: number;
+  householdSize: number;
+  deductions?: Deduction[];
 }
 
 // export interface PersonalInformation {
