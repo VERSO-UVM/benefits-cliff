@@ -21,12 +21,12 @@ def remove_dollars(df: pd.DataFrame, column_name: str):
     )
 
 
-def clean_fpl_df():
+def clean_threesquares_df():
     """
     Hardcoded clean of federal poverty limit df from
     https://dcf.vermont.gov/benefits/3SquaresVT/income-guidelines.
     """
-    df = pd.read_csv("src/data/fpl/fpl-annual_2-1-2026_raw.csv", index_col=False)
+    df = pd.read_csv("src/data/fpl/fpl-snap_2-1-2026_raw.csv", index_col=False)
     df.rename(
         inplace=True,
         columns={
@@ -45,5 +45,26 @@ def clean_fpl_df():
     df.to_csv("src/data/fpl/fpl-monthly-2-1-2026_clean.csv", index=False)
 
 
+def clean_dynosaur_df():
+    """Hardcoded clean of federal poverty limit info from
+    https://info.healthconnect.vermont.gov/compare-plans/medicaid-and-dr-dynasaur
+    """
+    df = pd.read_csv("src/data/fpl/fpl-dynosaur_2-1-2026_raw.csv")
+    df.rename(
+        inplace=True,
+        columns={
+            "Household Size*": "Household Size",
+            "$0 Premium": "0 Premium",
+            "$15 premium per family per month": "15 Premium",
+            "$20 premium per family, per month if child(ren) have other insurance. $60 premium per family, per month if child(ren) are uninsured": "20-60 Premium",
+        },
+    )
+    remove_dollars(df, "0 Premium")
+    remove_dollars(df, "15 Premium")
+    remove_dollars(df, "20-60 Premium")
+    df.to_csv("src/data/fpl/fpl-dynosaur_2-1-2026_clean.csv", index=False)
+
+
 if __name__ == "__main__":
-    clean_fpl_df()
+    clean_threesquares_df()
+    clean_dynosaur_df()

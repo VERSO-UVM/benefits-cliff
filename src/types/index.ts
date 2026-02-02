@@ -1,5 +1,6 @@
 export interface RawHouseholdData {
-  annualIncome: number;
+  earnedMonthlyIncome: number;
+  unearnedMonthlyIncome: number;
   adults: number;
   children: number;
   monthlyShelterCost: number;

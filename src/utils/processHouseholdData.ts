@@ -4,14 +4,15 @@ import { getStandardDeduction } from "../data/deductions";
 export default function processHouseholdData(
   data: RawHouseholdData,
 ): ProcessedHouseholdData {
-  const grossMonthlyIncome = data.annualIncome / 12;
+  const grossMonthlyIncome =
+    data.earnedMonthlyIncome + data.unearnedMonthlyIncome;
   const adults = data.adults;
   const children = data.children;
   const householdSize = adults + children;
   const monthlyShelterCost = data.monthlyShelterCost;
 
   // calculations: https://www.ahsnet.ahs.state.vt.us/Public/3sVT/assets/BRM/2400_Benefits.htm#Net_Income
-  const earnedDeduction = grossMonthlyIncome * 0.2;
+  const earnedDeduction = data.earnedMonthlyIncome * 0.2;
   const standardDeduction = getStandardDeduction(householdSize);
   const medicalDeduction = 0; // TODO, LOGIC
   const dependentCareDeduction = 0; // TODO Logic

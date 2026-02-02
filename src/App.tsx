@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import InputForm from "./components/InputForm";
 import calculateBenefits from "./utils/benefitCalculators";
+import Results from "./components/BenefitsDisplay";
+import { Title, Center } from "@mantine/core";
 
 import type {
   RawHouseholdData,
@@ -27,21 +29,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1> Vermont Benefits Cliff Calculator</h1>
+      <Center>
+        <Title order={1}> Vermont Benefits Cliff Calculator </Title>
+      </Center>
       <InputForm onCalculate={handleCalculate} />
-      {result && (
-        <div>
-          <h2>Results</h2>
-          <p>Gross Monthly Income: {processedData?.grossMonthlyIncome}</p>
-          <p>Net Monthly Income: {processedData?.netMonthlyIncome}</p>
-          <h3>Benefit: </h3>
-          {result.benefits.map((benefit) => (
-            <div key={benefit.name}>
-              <strong>{benefit.name}:</strong>
-              {benefit.eligible ? ` $${benefit.amount}/month` : " Not eligible"}
-            </div>
-          ))}
-        </div>
+      {result && processedData && (
+        <Results result={result} processedData={processedData} />
       )}
     </div>
   );

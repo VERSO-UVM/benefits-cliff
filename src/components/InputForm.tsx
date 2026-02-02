@@ -1,6 +1,6 @@
 import { useState } from "react";
-import type { ChangeEvent } from "react";
 import type { RawHouseholdData } from "../types";
+import { Button, NumberInput, Stack, Container } from "@mantine/core";
 
 interface InputFormProps {
   onCalculate: (data: RawHouseholdData) => void;
@@ -8,81 +8,92 @@ interface InputFormProps {
 
 export default function InputForm({ onCalculate }: InputFormProps) {
   const [formData, setFormData] = useState<RawHouseholdData>({
-    annualIncome: 0,
+    earnedMonthlyIncome: 0,
+    unearnedMonthlyIncome: 0,
     adults: 1,
     children: 0,
     monthlyShelterCost: 0,
   });
-  const handleSubmit = () => {
+
+  const handleSubmit = (e: React.ChangeEvent) => {
+    e.preventDefault();
     onCalculate(formData);
   };
 
-  const handleChange =
-    (field: keyof RawHouseholdData) => (e: ChangeEvent<HTMLInputElement>) => {
-      setFormData((prev) => ({ ...prev, [field]: Number(e.target.value) }));
-    };
-
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleSubmit();
-      }}
-    >
-      <div>
-        <label>
-          Annual Income:
-          <input
-            type="number"
-            value={formData.annualIncome}
-            onChange={handleChange("annualIncome")}
-            min="0"
-            step="1000"
+    <Container size="xs">
+      <form onSubmit={handleSubmit}>
+        <Stack gap="md">
+          <NumberInput
+            label="Earned Monthly Income"
+            value={formData.earnedMonthlyIncome}
+            onChange={(value) =>
+              setFormData((prev) => ({
+                ...prev,
+                earnedMonthlyIncome: Number(value),
+              }))
+            }
+            min={0}
+            step={100}
+            thousandSeparator=","
+            prefix="$"
           />
-        </label>
-      </div>
 
-      <div>
-        <label>
-          Adults in Household:
-          <input
-            type="number"
+          <NumberInput
+            label="Unearned Monthly Income"
+            value={formData.unearnedMonthlyIncome}
+            onChange={(value) =>
+              setFormData((prev) => ({
+                ...prev,
+                unearnedMonthlyIncome: Number(value),
+              }))
+            }
+            min={0}
+            step={100}
+            thousandSeparator=","
+            prefix="$"
+          />
+
+          <NumberInput
+            label="Adults in Household"
             value={formData.adults}
-            onChange={handleChange("adults")}
-            min="1"
-            max="10"
+            onChange={(value) =>
+              setFormData((prev) => ({ ...prev, adults: Number(value) }))
+            }
+            min={1}
+            max={10}
           />
-        </label>
-      </div>
 
-      <div>
-        <label>
-          Children in Household:
-          <input
-            type="number"
+          <NumberInput
+            label="Children in Household"
             value={formData.children}
-            onChange={handleChange("children")}
-            min="0"
-            max="10"
+            onChange={(value) =>
+              setFormData((prev) => ({ ...prev, children: Number(value) }))
+            }
+            min={0}
+            max={10}
           />
-        </label>
-      </div>
 
-      <div>
-        <label>
-          Monthly Shelter Cost
-          <input
-            type="number"
+          <NumberInput
+            label="Monthly Shelter Cost"
             value={formData.monthlyShelterCost}
-            onChange={handleChange("monthlyShelterCost")}
-            min="0"
-            max="10000"
-            step="100"
+            onChange={(value) =>
+              setFormData((prev) => ({
+                ...prev,
+                monthlyShelterCost: Number(value),
+              }))
+            }
+            min={0}
+            step={100}
+            thousandSeparator=","
+            prefix="$"
           />
-        </label>
-      </div>
 
-      <button type="submit">Calculate Benefits</button>
-    </form>
+          <Button type="submit" fullWidth>
+            Calculate Benefits
+          </Button>
+        </Stack>
+      </form>
+    </Container>
   );
 }
