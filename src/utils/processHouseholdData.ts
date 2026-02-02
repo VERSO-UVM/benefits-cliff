@@ -4,7 +4,7 @@ import { getStandardDeduction } from "../data/deductions";
 export default function processHouseholdData(
   data: RawHouseholdData,
 ): ProcessedHouseholdData {
-  const grossMonthlyIncome = data.annualIncome;
+  const grossMonthlyIncome = data.annualIncome / 12;
   const adults = data.adults;
   const children = data.children;
   const householdSize = adults + children;
@@ -24,9 +24,11 @@ export default function processHouseholdData(
     dependentCareDeduction -
     childSupportDeduction;
 
-  const shelterTemp = 0.5 * tempIncome;
-  const shelterDeduction = Math.max(monthlyShelterCost - shelterTemp, 600);
-  const netMonthlyIncome = tempIncome - shelterDeduction;
+  const halfIncome = 0.5 * tempIncome;
+  const shelterExcess = Math.max(0, monthlyShelterCost - halfIncome); // avoid negative temporary shelter values
+  const maxShelterDeduction = 600;
+  const shelterDeduction = Math.min(shelterExcess, maxShelterDeduction);
+  const netMonthlyIncome = Math.max(tempIncome - shelterDeduction, 0);
   return {
     grossMonthlyIncome: grossMonthlyIncome,
     netMonthlyIncome: netMonthlyIncome,

@@ -20,6 +20,8 @@ function calculateThreeSquares(data: ProcessedHouseholdData): BenefitResult {
   const allotment_adjustment = data.netMonthlyIncome * 0.3;
   const benefit = Math.max(0, Math.round(maxAllotment - allotment_adjustment));
 
+  console.log(maxAllotment, allotment_adjustment, benefit);
+
   if (
     data.grossMonthlyIncome <= grossLimit ||
     data.netMonthlyIncome <= netLimit

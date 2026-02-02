@@ -76,7 +76,8 @@ export default function InputForm({ onCalculate }: InputFormProps) {
             value={formData.monthlyShelterCost}
             onChange={handleChange("monthlyShelterCost")}
             min="0"
-            max="10"
+            max="10000"
+            step="100"
           />
         </label>
       </div>

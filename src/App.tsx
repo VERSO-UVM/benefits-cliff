@@ -18,7 +18,9 @@ function App() {
 
   const handleCalculate = (data: RawHouseholdData) => {
     const processedData = processHouseholdData(data);
+    console.log(data);
     setProcessedData(processedData);
+    console.log(processedData);
     const results = calculateBenefits(processedData);
     setResults(results);
   };

@@ -61,7 +61,7 @@ export function getThreeSquaresNetIncomeLimit(householdSize: number): number {
 }
 
 export function getThreeSquaresAllotment(householdSize: number): number {
-  const limits = Three_Squares_VT_Values_2025.grossMonthlyLimit;
+  const limits = Three_Squares_VT_Values_2025.maximumBenefit;
   if (householdSize <= 10) {
     return limits[householdSize as keyof typeof limits] as number;
   }
