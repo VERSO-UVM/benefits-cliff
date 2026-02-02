@@ -1,5 +1,8 @@
-See [https://dcf.vermont.gov/benefits/3SquaresVT](vermont.gov) for more information.
-See also [https://snapeligibilitycalculator.com/snap-benefits-by-state/vermont/](snageligibilitycalculator.com) for a more extensive walkthrough.
+# Sourcing
+
+* See [https://dcf.vermont.gov/benefits/3SquaresVT](vermont.gov) for basic information.
+* See also [snapeligibility.com](https://snapeligibilitycalculator.com/snap-benefits-by-state/vermont/) for a more extensive walkthrough.
+* The [Policy Manual](https://www.ahsnet.ahs.state.vt.us/Public/3sVT/assets/BRM/1700DetIncDeduct.htm#IncomeLimits) is our ultimate source of truth
 
 # Basic Eligibility:
 

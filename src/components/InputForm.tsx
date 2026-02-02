@@ -1,23 +1,24 @@
 import { useState } from "react";
 import type { ChangeEvent } from "react";
-import type { HouseholdData } from "../types";
+import type { RawHouseholdData } from "../types";
 
 interface InputFormProps {
-  onCalculate: (data: HouseholdData) => void;
+  onCalculate: (data: RawHouseholdData) => void;
 }
 
 export default function InputForm({ onCalculate }: InputFormProps) {
-  const [formData, setFormData] = useState<HouseholdData>({
+  const [formData, setFormData] = useState<RawHouseholdData>({
     annualIncome: 0,
     adults: 1,
     children: 0,
+    monthlyShelterCost: 0,
   });
   const handleSubmit = () => {
     onCalculate(formData);
   };
 
   const handleChange =
-    (field: keyof HouseholdData) => (e: ChangeEvent<HTMLInputElement>) => {
+    (field: keyof RawHouseholdData) => (e: ChangeEvent<HTMLInputElement>) => {
       setFormData((prev) => ({ ...prev, [field]: Number(e.target.value) }));
     };
 
@@ -60,12 +61,26 @@ export default function InputForm({ onCalculate }: InputFormProps) {
           <input
             type="number"
             value={formData.children}
-            onChange={handleChange("adults")}
+            onChange={handleChange("children")}
             min="0"
             max="10"
           />
         </label>
       </div>
+
+      <div>
+        <label>
+          Monthly Shelter Cost
+          <input
+            type="number"
+            value={formData.monthlyShelterCost}
+            onChange={handleChange("monthlyShelterCost")}
+            min="0"
+            max="10"
+          />
+        </label>
+      </div>
+
       <button type="submit">Calculate Benefits</button>
     </form>
   );

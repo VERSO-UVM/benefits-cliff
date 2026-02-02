@@ -26,10 +26,23 @@ def clean_fpl_df():
     Hardcoded clean of federal poverty limit df from
     https://dcf.vermont.gov/benefits/3SquaresVT/income-guidelines.
     """
-    df = pd.read_csv("src/data/fpl-monthly-2025_raw.csv", index_col=False)
-    remove_dollars(df, "Expanded Gross Monthly Income (185% of FPL)")
-    remove_dollars(df, "Maximum Net Monthly Income (100% of FPL)")
-    df.to_csv("src/data/fpl-monthly-2025_clean.csv", index=False)
+    df = pd.read_csv("src/data/fpl/fpl-annual_2-1-2026_raw.csv", index_col=False)
+    df.rename(
+        inplace=True,
+        columns={
+            "FS House-hold Size": "Household Size",
+            "Gross Monthly Income Limit (185%FPL)": "Gross Monthly Income Limit",
+            "Gross Monthly Income Limit (165% FPL)": "Drop1",
+            "Gross Monthly Income Limit (130% FPL)": "Drop2",
+            "Net Monthly Income Limit (100% FPL)": "Net Monthly Income Limit",
+        },
+    )
+
+    df.drop(inplace=True, columns={"Drop1", "Drop2"})
+    remove_dollars(df, "Gross Monthly Income Limit")
+    remove_dollars(df, "Net Monthly Income Limit")
+    remove_dollars(df, "Maximum Monthly Benefit")
+    df.to_csv("src/data/fpl/fpl-monthly-2-1-2026_clean.csv", index=False)
 
 
 if __name__ == "__main__":

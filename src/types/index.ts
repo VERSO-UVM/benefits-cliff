@@ -1,7 +1,8 @@
 export interface RawHouseholdData {
-  annualIncome: number;
+  monthlyIncome: number;
   adults: number;
   children: number;
+  monthlyShelterCost: number;
 }
 
 interface Deduction {

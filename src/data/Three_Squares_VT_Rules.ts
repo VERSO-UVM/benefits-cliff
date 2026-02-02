@@ -1,3 +1,5 @@
+// note, this is sourced from the fpl csv files, themselves sourced from the page
+
 const Three_Squares_VT_Values_2025 = {
   grossMonthlyLimit: {
     1: 2413,
@@ -26,15 +28,17 @@ const Three_Squares_VT_Values_2025 = {
     additionalMember: 459,
   },
   maximumBenefit: {
-    1: 292,
-    2: 536,
-    3: 768,
-    4: 975,
-    5: 1158,
-    6: 1390,
-    7: 1536,
-    8: 1755,
-    additionalMember: 220,
+    1: 298,
+    2: 546,
+    3: 785,
+    4: 994,
+    5: 1183,
+    6: 1421,
+    7: 1571,
+    8: 1789,
+    9: 2007,
+    10: 2225,
+    additionalMember: 218,
   },
 };
 

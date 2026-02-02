@@ -1,3 +1,5 @@
+// source: https://www.ahsnet.ahs.state.vt.us/Public/3sVT/assets/BRM/2400_Benefits.htm#Net_Income
+
 export const deductions = {
   standard: {
     1: 209,

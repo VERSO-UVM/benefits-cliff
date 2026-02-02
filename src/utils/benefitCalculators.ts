@@ -2,7 +2,6 @@ import type {
   ProcessedHouseholdData,
   CalculationResult,
   BenefitResult,
-  RawHouseholdData,
 } from "../types";
 import {
   getThreeSquaresAllotment,
@@ -17,9 +16,9 @@ function calculateThreeSquares(data: ProcessedHouseholdData): BenefitResult {
   const netLimit = getThreeSquaresNetIncomeLimit(householdSize);
 
   // calculate benefits
-  const allotment = getThreeSquaresAllotment(householdSize);
+  const maxAllotment = getThreeSquaresAllotment(householdSize);
   const allotment_adjustment = data.netMonthlyIncome * 0.3;
-  const benefit = allotment - allotment_adjustment;
+  const benefit = Math.max(0, Math.round(maxAllotment - allotment_adjustment));
 
   if (
     data.grossMonthlyIncome <= grossLimit ||
@@ -39,11 +38,10 @@ function calculateThreeSquares(data: ProcessedHouseholdData): BenefitResult {
 }
 
 export default function calculateBenefits(
-  data: RawHouseholdData,
+  data: ProcessedHouseholdData,
 ): CalculationResult {
-  console.log("Calculate with", data);
   return {
-    income: data.annualIncome,
-    benefits: [{ name: "3SquaresVT", amount: 5000, eligible: true }],
+    income: data.grossMonthlyIncome,
+    benefits: [calculateThreeSquares(data)],
   };
 }
