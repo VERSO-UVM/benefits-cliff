@@ -20,15 +20,10 @@ export interface ProcessedHouseholdData {
   deductions?: Deduction[];
 }
 
-// export interface PersonalInformation {
-//   age: number;
-//   personalIncome: number;
-// }
-
 export interface BenefitResult {
   name: string;
-  amount: number;
   eligible: boolean;
+  amount?: number;
 }
 
 export interface CalculationResult {

@@ -39,11 +39,20 @@ function calculateThreeSquares(data: ProcessedHouseholdData): BenefitResult {
   };
 }
 
+function calculateDynasaur(data: ProcessedHouseholdData): BenefitResult {
+  const householdSize = data.householdSize;
+
+  return {
+    name: "Dr Dynasaur",
+    eligible: true,
+  };
+}
+
 export default function calculateBenefits(
   data: ProcessedHouseholdData,
 ): CalculationResult {
   return {
     income: data.grossMonthlyIncome,
-    benefits: [calculateThreeSquares(data)],
+    benefits: [calculateThreeSquares(data), calculateDynasaur(data)],
   };
 }

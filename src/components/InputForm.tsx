@@ -65,7 +65,7 @@ export default function InputForm({ onCalculate }: InputFormProps) {
           />
 
           <NumberInput
-            label="Children in Household"
+            label="Children Under Nineteen in Household"
             value={formData.children}
             onChange={(value) =>
               setFormData((prev) => ({ ...prev, children: Number(value) }))
