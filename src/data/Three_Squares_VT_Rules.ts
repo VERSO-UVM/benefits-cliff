@@ -1,6 +1,6 @@
 // note, this is sourced from the fpl csv files, themselves sourced from the page
 
-const Three_Squares_VT_Values_2025 = {
+export const Three_Squares_VT_Values_2025 = {
   grossMonthlyLimit: {
     1: 2413,
     2: 3261,
