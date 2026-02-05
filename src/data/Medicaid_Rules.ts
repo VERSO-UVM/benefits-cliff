@@ -1,32 +1,46 @@
 const Medicaid_Values = {
-  Adults: {
-    0: 1800,
-    1: 2433,
-    2: 3065,
-    3: 3698,
-    4: 4329,
-    5: 4962,
-    6: 5595,
-    7: 6227,
+  MedicaidForAdults: {
+    1: 1800,
+    2: 2433,
+    3: 3065,
+    4: 3698,
+    5: 4329,
+    6: 4962,
+    7: 5595,
+    8: 6227,
   },
-  pregnantWomen: {
-    0: 0,
-    1: 3754,
-    2: 4731,
-    3: 5707,
-    4: 6682,
-    5: 7659,
-    6: 8635,
-    7: 9611,
+  PregnantWomen: {
+    1: 0,
+    2: 3754,
+    3: 4731,
+    4: 5707,
+    5: 6682,
+    6: 7659,
+    7: 8635,
+    8: 9611,
   },
-  childrenUnderNineteen: {
-    0: 4134,
-    1: 5587,
-    2: 7040,
-    3: 8493,
-    4: 9945,
-    5: 11398,
-    6: 12851,
-    7: 14304,
+  ChildrenUnder19: {
+    1: 4134,
+    2: 5587,
+    3: 7040,
+    4: 8493,
+    5: 9945,
+    6: 11398,
+    7: 12851,
+    8: 14304,
   },
 };
+
+export type MedicaidLimitType =
+  | "MedicaidForAdults"
+  | "PregnantWomen"
+  | "ChildrenUnder19";
+
+export function getMedicaidLimit(
+  householdSize: number,
+  type: MedicaidLimitType,
+): number {
+  const limits = Medicaid_Values[type];
+  householdSize = Math.min(householdSize, 8);
+  return limits[householdSize as keyof typeof limits] as number;
+}

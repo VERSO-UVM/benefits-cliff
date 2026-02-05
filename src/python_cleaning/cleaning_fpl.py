@@ -83,7 +83,30 @@ def clean_medicaid_df():
     df.to_csv("src/data/fpl/medicaid-full_2-1-2026_clean.csv", index=False)
 
 
+def clean_ccfap_asst_guidelines():
+    df = pd.read_csv("src/data/ccfap/ccfap-asst-guidelines_3-1-25.csv")
+    remove_dollars(
+        df,
+        [
+            # "Household Size",
+            "Gross Monthly Income",
+            "Weekly Family Share",
+        ],
+    )
+    df = df.drop(columns="Federal Poverty Level")
+
+    grouped = df.groupby("Household Size")
+    for size, group in grouped:
+        print(f"{size} : [")
+        for _, row in group.iterrows():
+            print(
+                f"    {{ maxIncome: {row['Gross Monthly Income']}, weeklyCopay: {row['Weekly Family Share']} }},"
+            )
+        print("  ],")
+
+
 if __name__ == "__main__":
-    clean_threesquares_df()
-    clean_dynosaur_df()
-    clean_medicaid_df()
+    clean_ccfap_asst_guidelines()
+    # clean_threesquares_df()
+    # clean_dynosaur_df()
+    # clean_medicaid_df()

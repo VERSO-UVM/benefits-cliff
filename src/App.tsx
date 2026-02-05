@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import InputForm from "./components/InputForm";
+import MainInputForm from "./components/MainInputForm";
 import calculateBenefits from "./utils/benefitCalculators";
 import Results from "./components/BenefitsDisplay";
 import { Title, Center } from "@mantine/core";
@@ -9,36 +9,37 @@ import type {
   RawHouseholdData,
   ProcessedHouseholdData,
   CalculationResult,
+  SupplementalInfo,
 } from "./types";
 
 import processHouseholdData from "./utils/processHouseholdData";
-
 function App() {
   const [processedData, setProcessedData] =
     useState<ProcessedHouseholdData | null>(null);
-  const [result, setResults] = useState<CalculationResult | null>(null);
+  const [result, setResult] = useState<CalculationResult | null>(null);
 
-  const handleCalculate = (data: RawHouseholdData) => {
-    const processedData = processHouseholdData(data);
-    console.log(data);
-    setProcessedData(processedData);
-    console.log(processedData);
-    const results = calculateBenefits(processedData);
-    setResults(results);
+  const handleCalculate = (
+    data: RawHouseholdData,
+    supplemental: SupplementalInfo,
+  ) => {
+    const processed = processHouseholdData(data, supplemental);
+    setProcessedData(processed);
+    setResult(calculateBenefits(processed, supplemental));
   };
 
   return (
     <div className="App">
       <Center>
-        <Title order={1}> Vermont Benefits Cliff Calculator </Title>
+        <Title order={1}>Vermont Benefits Cliff Calculator</Title>
       </Center>
-      <InputForm onCalculate={handleCalculate} />
+      <MainInputForm onCalculate={handleCalculate} />
       {result && processedData && (
         <Results result={result} processedData={processedData} />
       )}
     </div>
   );
 }
+
 export default App;
 
 {

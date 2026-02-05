@@ -1,23 +1,35 @@
+import type {
+  ChildAgeRange,
+  ChildcareDuration,
+  ChildcareType,
+} from "../data/ccfap";
+
+// main input
 export interface RawHouseholdData {
   earnedMonthlyIncome: number;
   unearnedMonthlyIncome: number;
   adults: number;
   children: number;
   monthlyShelterCost: number;
+  monthlyChildcareCost: number;
 }
 
-interface Deduction {
-  name: string;
-  value: number;
+// secondary input
+export interface SupplementalInfo {
+  hasPregnantMember?: boolean;
+  childAgeRange?: ChildAgeRange;
+  childcareDuration?: ChildcareDuration;
+  childcareType?: ChildcareType;
 }
 
+// data storage
 export interface ProcessedHouseholdData {
   grossMonthlyIncome: number;
   netMonthlyIncome: number;
+  monthlyChildcareCost: number;
   adults: number;
   children: number;
   householdSize: number;
-  deductions?: Deduction[];
 }
 
 export interface BenefitResult {

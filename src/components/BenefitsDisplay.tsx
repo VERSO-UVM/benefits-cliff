@@ -9,10 +9,34 @@ import {
   Center,
 } from "@mantine/core";
 import type { CalculationResult, ProcessedHouseholdData } from "../types";
+import type { BenefitResult } from "../types";
 
 interface ResultsProps {
   result: CalculationResult;
   processedData: ProcessedHouseholdData;
+}
+
+function BenefitCard({ benefit }: { benefit: BenefitResult }) {
+  const badge = benefit.eligible ? (
+    benefit.amount ? (
+      <Badge color="green" size="lg">
+        ${benefit.amount}/month
+      </Badge>
+    ) : (
+      <Badge color="green">Eligible</Badge>
+    )
+  ) : (
+    <Badge color="gray">Not eligible</Badge>
+  );
+
+  return (
+    <Card key={benefit.name} withBorder mb="sm">
+      <Group justify="space-between">
+        <Text fw={600}>{benefit.name}</Text>
+        {badge}
+      </Group>
+    </Card>
+  );
 }
 
 export default function Results({ result, processedData }: ResultsProps) {
@@ -42,18 +66,7 @@ export default function Results({ result, processedData }: ResultsProps) {
             Benefits
           </Title>
           {result.benefits.map((benefit) => (
-            <Card key={benefit.name} withBorder mb="sm">
-              <Group justify="space-between">
-                <Text fw={600}>{benefit.name}</Text>
-                {benefit.eligible ? (
-                  <Badge color="green" size="lg">
-                    ${benefit.amount}/month
-                  </Badge>
-                ) : (
-                  <Badge color="gray">Not eligible</Badge>
-                )}
-              </Group>
-            </Card>
+            <BenefitCard key={benefit.name} benefit={benefit} />
           ))}
         </div>
       </Stack>

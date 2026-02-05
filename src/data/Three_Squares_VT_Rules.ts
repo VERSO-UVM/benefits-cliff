@@ -1,6 +1,6 @@
 // note, this is sourced from the fpl csv files, themselves sourced from the page
 
-export const Three_Squares_VT_Values_2025 = {
+const Three_Squares_VT_Values_2025 = {
   grossMonthlyLimit: {
     1: 2413,
     2: 3261,
@@ -42,29 +42,17 @@ export const Three_Squares_VT_Values_2025 = {
   },
 };
 
-export function getThreeSquaresGrossIncomeLimit(householdSize: number): number {
-  const limits = Three_Squares_VT_Values_2025.grossMonthlyLimit;
-  if (householdSize <= 10) {
-    return limits[householdSize as keyof typeof limits] as number;
-  }
-  // For households > 10
-  return limits[10] + (householdSize - 10) * limits.additionalMember;
-}
+type SNAPLimitType = "grossMonthlyLimit" | "netMonthlyLimit" | "maximumBenefit";
 
-export function getThreeSquaresNetIncomeLimit(householdSize: number): number {
-  const limits = Three_Squares_VT_Values_2025.netMonthlyLimit;
-  if (householdSize <= 10) {
-    return limits[householdSize as keyof typeof limits] as number;
-  }
-  // For households > 10
-  return limits[10] + (householdSize - 10) * limits.additionalMember;
-}
+export function getThreeSquaresValues(
+  householdSize: number,
+  type: SNAPLimitType,
+): number {
+  const limits = Three_Squares_VT_Values_2025[type];
 
-export function getThreeSquaresAllotment(householdSize: number): number {
-  const limits = Three_Squares_VT_Values_2025.maximumBenefit;
   if (householdSize <= 10) {
     return limits[householdSize as keyof typeof limits] as number;
   }
-  // For households > 10
+
   return limits[10] + (householdSize - 10) * limits.additionalMember;
 }

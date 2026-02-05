@@ -1,15 +1,20 @@
-import type { RawHouseholdData, ProcessedHouseholdData } from "../types";
+import type {
+  RawHouseholdData,
+  ProcessedHouseholdData,
+  SupplementalInfo,
+} from "../types";
 import { getStandardDeduction } from "../data/deductions";
+import { getWeeklyChildcarePaymentMax } from "../data/ccfap";
+import type { ChildcareInformation } from "../data/ccfap";
 
-export default function processHouseholdData(
-  data: RawHouseholdData,
-): ProcessedHouseholdData {
+function processIncome(data: RawHouseholdData): {
+  grossMonthlyIncome: number;
+  netMonthlyIncome: number;
+} {
   const grossMonthlyIncome =
     data.earnedMonthlyIncome + data.unearnedMonthlyIncome;
-  const adults = data.adults;
-  const children = data.children;
-  const householdSize = adults + children;
   const monthlyShelterCost = data.monthlyShelterCost;
+  const householdSize = data.adults + data.children;
 
   // calculations: https://www.ahsnet.ahs.state.vt.us/Public/3sVT/assets/BRM/2400_Benefits.htm#Net_Income
   const earnedDeduction = data.earnedMonthlyIncome * 0.2;
@@ -33,8 +38,40 @@ export default function processHouseholdData(
   return {
     grossMonthlyIncome: grossMonthlyIncome,
     netMonthlyIncome: netMonthlyIncome,
-    adults: adults,
-    children: children,
-    householdSize: householdSize,
+  };
+}
+
+function processChildcareCost(
+  data: RawHouseholdData,
+  supplemental: SupplementalInfo,
+): number {
+  if (data.children === 0) return 0;
+  // default to most likely scenario if no data
+  const childcareInfo: ChildcareInformation = {
+    childAgeRange: supplemental.childAgeRange ?? "preschool",
+    childcareDuration: supplemental.childcareDuration ?? "fullTime",
+    childcareType: supplemental.childcareType ?? "licensedCenter",
+  };
+
+  return Math.min(
+    data.monthlyChildcareCost,
+    getWeeklyChildcarePaymentMax(childcareInfo) * 4.33, // convert to monthly
+  );
+}
+
+export default function processHouseholdData(
+  data: RawHouseholdData,
+  supplemental: SupplementalInfo,
+): ProcessedHouseholdData {
+  const processedIncome = processIncome(data);
+  const childcareCost = processChildcareCost(data, supplemental);
+
+  return {
+    grossMonthlyIncome: processedIncome.grossMonthlyIncome,
+    netMonthlyIncome: processedIncome.netMonthlyIncome,
+    adults: data.adults,
+    children: data.children,
+    householdSize: data.adults + data.children,
+    monthlyChildcareCost: childcareCost,
   };
 }
