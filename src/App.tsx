@@ -3,7 +3,7 @@ import { useState } from "react";
 import MainInputForm from "./components/MainInputForm";
 import calculateBenefits from "./utils/benefitCalculators";
 import Results from "./components/BenefitsDisplay";
-import { Title, Center, Alert, Stack } from "@mantine/core";
+import { Title, Center, Alert, Stack, Text } from "@mantine/core";
 
 import type {
   RawHouseholdData,
@@ -37,15 +37,27 @@ function App() {
           {result && processedData && (
             <Results result={result} processedData={processedData} />
           )}
-          <Alert color="red" variant="filled" title="Warning">
-            Caveat: the Vermont Benefits Estimator is intended as an initial
-            reference.
-            <br />
-            It is a work in progress and does not include all factors involved
-            in benefits estimation.
-            <br />
-            Always trust current state guidelines, policies, and conclusions
-            over the estimations you see here.
+          <Alert
+            color="red"
+            variant="filled"
+            styles={{
+              body: { textAlign: "center" },
+              title: { textAlign: "center" },
+            }}
+            title="Warning"
+          >
+            <Text>
+              Caveat: the Vermont Benefits Estimator is intended as an initial
+              reference.
+            </Text>
+            <Text>
+              It is a work in progress and does not include all factors involved
+              in benefits estimation.
+            </Text>
+            <Text>
+              Always trust current state guidelines, policies, and conclusions
+              over the estimations you see here.
+            </Text>
           </Alert>
         </Stack>
       </Center>
