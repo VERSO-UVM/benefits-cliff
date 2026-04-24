@@ -13,6 +13,7 @@ import type {
 } from "./types";
 
 import processHouseholdData from "./utils/processHouseholdData";
+
 function App() {
   const [processedData, setProcessedData] =
     useState<ProcessedHouseholdData | null>(null);
@@ -24,7 +25,7 @@ function App() {
   ) => {
     const processed = processHouseholdData(data, supplemental);
     setProcessedData(processed);
-    setResult(calculateBenefits(processed, supplemental));
+    setResult(calculateBenefits(processed, data, supplemental));
   };
 
   return (

@@ -1,15 +1,20 @@
-import type {
-  ChildAgeRange,
-  ChildcareDuration,
-  ChildcareType,
-} from "../data/ccfap";
+import type { ChildcareDuration, ChildcareType } from "../data/ccfap";
+
+export interface DependentChild {
+  age: number;
+  childcareDuration: ChildcareDuration;
+  childcareType: ChildcareType;
+}
+
+export type TaxFilingStatus = "single" | "marriedFilingJointly" | "headOfHousehold";
 
 // main input
 export interface RawHouseholdData {
   earnedMonthlyIncome: number;
   unearnedMonthlyIncome: number;
   adults: number;
-  children: number;
+  dependentChildren: DependentChild[];
+  taxFilingStatus: TaxFilingStatus;
   monthlyShelterCost: number;
   monthlyChildcareCost: number;
 }
@@ -17,9 +22,6 @@ export interface RawHouseholdData {
 // secondary input
 export interface SupplementalInfo {
   hasPregnantMember?: boolean;
-  childAgeRange?: ChildAgeRange;
-  childcareDuration?: ChildcareDuration;
-  childcareType?: ChildcareType;
 }
 
 // data storage
@@ -30,6 +32,7 @@ export interface ProcessedHouseholdData {
   adults: number;
   children: number;
   householdSize: number;
+  taxFilingStatus: TaxFilingStatus;
 }
 
 export interface BenefitResult {

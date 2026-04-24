@@ -3,11 +3,14 @@ import type {
   CalculationResult,
   BenefitResult,
   SupplementalInfo,
+  RawHouseholdData,
+  TaxFilingStatus,
 } from "../types";
 import { getThreeSquaresValues } from "../data/Three_Squares_VT_Rules";
 import { getMedicaidLimit } from "../data/Medicaid_Rules";
 import type { MedicaidLimitType } from "../data/Medicaid_Rules";
 import { getWeeklyCopay } from "../data/ccfap";
+import { CalculateEarnedTaxCredits } from "../data/Taxes";
 
 function calculateThreeSquares(data: ProcessedHouseholdData): BenefitResult {
   const { householdSize, grossMonthlyIncome, netMonthlyIncome } = data;
@@ -111,16 +114,26 @@ function calculateCCFAP(data: ProcessedHouseholdData): BenefitResult {
   };
 }
 
+function ProcessFIlingStatus(filingStatus: TaxFilingStatus): number {
+  const status =
+    filingStatus === "single"
+      ? 1
+      : filingStatus === "marriedFilingJointly"
+        ? 2
+        : 3;
+  return status;
+}
+
 export default function calculateBenefits(
-  data: ProcessedHouseholdData,
+  processedData: ProcessedHouseholdData,
   supplemental: SupplementalInfo,
 ): CalculationResult {
   return {
-    income: data.grossMonthlyIncome,
+    income: processedData.grossMonthlyIncome,
     benefits: [
-      calculateThreeSquares(data),
-      calculateCCFAP(data),
-      ...calculateMedicaid(data, supplemental),
+      calculateThreeSquares(processedData),
+      calculateCCFAP(processedData),
+      ...calculateMedicaid(processedData, supplemental),
     ],
   };
 }

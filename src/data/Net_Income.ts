@@ -11,7 +11,7 @@ export const deductions = {
   },
 };
 
-export function getStandardDeduction(householdSize: number): number {
+export function netIncomeDeduction(householdSize: number): number {
   const limits = deductions.standard;
   if (householdSize <= 5) {
     return limits[householdSize as keyof typeof limits] as number;
