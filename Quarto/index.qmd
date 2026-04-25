@@ -17,13 +17,21 @@ for both users and legislators. To see how each piece is calculated, check out t
 
 # Road Map
 
+## Features 
+
+| Feature | Status |
+|-------- | -------| 
+| Callouts | Planned |
+| User-facing calculator | Partial |
+| Legislator-facing calculator | Planned | 
+
 ## Monthly Benefits
 
 | Benefit | Status |
 |---------|--------|
 | [3 Squares](info/3squaresvt.qmd) | Complete |
 | [Child Care Subsidy](info/ccfap.qmd) | Partial |
-| [Reach Up](info/reachup.qmd) | Planned |
+| [Reach Up](info/reachup.qmd) | Complete |
 | LIHEAP | Planned |
 | Lifeline | Planned |
 | VT Premium subsidy | Planned |
@@ -48,3 +56,6 @@ for both users and legislators. To see how each piece is calculated, check out t
 |---------|--------|
 | [After-Tax Income](info/Taxes.qmd) | Complete |
 | [VT Income Tax](info/Taxes.qmd) | Complete |
+
+
+## 

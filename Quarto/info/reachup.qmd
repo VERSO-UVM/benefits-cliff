@@ -27,5 +27,11 @@ Then
 Maximum Grant - Countable Income = Reach up Grant
 
 
-That is 
+# Logic 
+1. Get the needs and shelter from the household size and location (in or out of chittenden)
+2. Adjust the shelter with the special allowance if rent is over allowance (up to max of 90)
+    * ignore subsidized housing in this
+3. 
 
+## Caveats
+- This logic *ignores

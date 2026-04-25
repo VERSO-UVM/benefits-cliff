@@ -6,9 +6,14 @@ project:
     - Quarto/*.qmd
 
 website:
-  title: "Benefits Estimator" 
+  title: "Benefits Estimator"
+  page-navigation: true
   sidebar:
     contents: auto
+  navbar:
+    left:
+      - href: Quarto/index.qmd
+        text: Home
   
 format: 
   html:

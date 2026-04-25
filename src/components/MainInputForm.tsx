@@ -153,6 +153,20 @@ function SupplementalQuestions({
           onChange({ ...data, hasPregnantMember: e.currentTarget.checked })
         }
       />
+      <Checkbox
+        label="Household is in Chittenden County"
+        checked={data.inChittenden}
+        onChange={(e) =>
+          onChange({ ...data, inChittenden: e.currentTarget.checked })
+        }
+      />
+      <Checkbox
+        label="Household is in subsidized housing"
+        checked={data.inSubsidizedHousing}
+        onChange={(e) =>
+          onChange({ ...data, inSubsidizedHousing: e.currentTarget.checked })
+        }
+      />
     </Stack>
   );
 }
@@ -170,6 +184,8 @@ export default function MainInputForm({ onCalculate }: InputFormProps) {
 
   const [supplemental, setSupplemental] = useState<SupplementalInfo>({
     hasPregnantMember: false,
+    inChittenden: false,
+    inSubsidizedHousing: false,
   });
 
   const [showSupplemental, setShowSupplemental] = useState(false);

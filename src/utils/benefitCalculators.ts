@@ -11,6 +11,7 @@ import { getMedicaidLimit } from "../data/Medicaid_Rules";
 import type { MedicaidLimitType } from "../data/Medicaid_Rules";
 import { getWeeklyCopay } from "../data/ccfap";
 import { CalculateEarnedTaxCredits } from "../data/Taxes";
+import { calculateReachUp } from "../data/ReachUP_Rules";
 
 function calculateThreeSquares(data: ProcessedHouseholdData): BenefitResult {
   const { householdSize, grossMonthlyIncome, netMonthlyIncome } = data;
@@ -114,6 +115,32 @@ function calculateCCFAP(data: ProcessedHouseholdData): BenefitResult {
   };
 }
 
+function buildReachUP(
+  data: ProcessedHouseholdData,
+  supplemental: SupplementalInfo,
+): BenefitResult {
+  // NOTE: defaults to Chittenden if not provided.
+  const familySize = data.adults + data.children.length;
+  const earnedIncome = data.earnedMonthlyIncome;
+  const rent = data.monthlyShelterCost;
+  const inChittenden = supplemental.inChittenden
+    ? supplemental.inChittenden
+    : true;
+  const reachUpGrant = calculateReachUp(
+    familySize,
+    inChittenden,
+    rent,
+    earnedIncome,
+    supplemental.inSubsidizedHousing,
+  );
+
+  return {
+    name: "Reach Up Grant",
+    eligible: reachUpGrant > 0,
+    amount: reachUpGrant,
+  };
+}
+
 function ProcessFIlingStatus(filingStatus: TaxFilingStatus): number {
   const status =
     filingStatus === "single"
@@ -133,6 +160,7 @@ export default function calculateBenefits(
     benefits: [
       calculateThreeSquares(processedData),
       calculateCCFAP(processedData),
+      buildReachUP(processedData, supplemental),
       ...calculateMedicaid(processedData, supplemental),
     ],
   };

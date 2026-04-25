@@ -1,45 +1,56 @@
 [
   {
-    "objectID": "Quarto/overall_design.html",
-    "href": "Quarto/overall_design.html",
+    "objectID": "Quarto/index.html",
+    "href": "Quarto/index.html",
     "title": "Overall Benefits Roadmap",
     "section": "",
     "text": "Generally, this is intended as a modernization of this presentation for both users and legislators. To see how each piece is calculated, check out the Info tab in the table of contents on the left.",
     "crumbs": [
-      "Quarto",
+      "Home",
       "Overall Benefits Roadmap"
     ]
   },
   {
-    "objectID": "Quarto/overall_design.html#monthly-benefits",
-    "href": "Quarto/overall_design.html#monthly-benefits",
+    "objectID": "Quarto/index.html#features",
+    "href": "Quarto/index.html#features",
+    "title": "Overall Benefits Roadmap",
+    "section": "Features",
+    "text": "Features\n\n\n\nFeature\nStatus\n\n\n\n\nCallouts\nPlanned\n\n\nUser-facing calculator\nPartial\n\n\nLegislator-facing calculator\nPlanned",
+    "crumbs": [
+      "Home",
+      "Overall Benefits Roadmap"
+    ]
+  },
+  {
+    "objectID": "Quarto/index.html#monthly-benefits",
+    "href": "Quarto/index.html#monthly-benefits",
     "title": "Overall Benefits Roadmap",
     "section": "Monthly Benefits",
-    "text": "Monthly Benefits\n\n\n\nBenefit\nStatus\n\n\n\n\n3 Squares\nComplete\n\n\nChild Care Subsidy\nPartial\n\n\nReach Up\nPlanned\n\n\nLIHEAP\nPlanned\n\n\nLifeline\nPlanned\n\n\nVT Premium subsidy\nPlanned\n\n\nCost sharing VTHC\nPlanned\n\n\nMedicaid\nComplete",
+    "text": "Monthly Benefits\n\n\n\nBenefit\nStatus\n\n\n\n\n3 Squares\nComplete\n\n\nChild Care Subsidy\nPartial\n\n\nReach Up\nComplete\n\n\nLIHEAP\nPlanned\n\n\nLifeline\nPlanned\n\n\nVT Premium subsidy\nPlanned\n\n\nCost sharing VTHC\nPlanned\n\n\nMedicaid\nComplete",
     "crumbs": [
-      "Quarto",
+      "Home",
       "Overall Benefits Roadmap"
     ]
   },
   {
-    "objectID": "Quarto/overall_design.html#tax-annual",
-    "href": "Quarto/overall_design.html#tax-annual",
+    "objectID": "Quarto/index.html#tax-annual",
+    "href": "Quarto/index.html#tax-annual",
     "title": "Overall Benefits Roadmap",
     "section": "Tax / Annual",
     "text": "Tax / Annual\n\n\n\nBenefit\nStatus\n\n\n\n\nFed. EITC\nComplete\n\n\nVT EITC\nComplete\n\n\nFed child tax credits\nPlanned\n\n\nFed child/dependent care\nPlanned\n\n\nVT child/dependent care\nPlanned\n\n\nFed. Premium subsidy (ACA)\nPlanned\n\n\nRenter’s Rebate\nPlanned",
     "crumbs": [
-      "Quarto",
+      "Home",
       "Overall Benefits Roadmap"
     ]
   },
   {
-    "objectID": "Quarto/overall_design.html#base",
-    "href": "Quarto/overall_design.html#base",
+    "objectID": "Quarto/index.html#base",
+    "href": "Quarto/index.html#base",
     "title": "Overall Benefits Roadmap",
     "section": "Base",
     "text": "Base\n\n\n\nBenefit\nStatus\n\n\n\n\nAfter-Tax Income\nComplete\n\n\nVT Income Tax\nComplete",
     "crumbs": [
-      "Quarto",
+      "Home",
       "Overall Benefits Roadmap"
     ]
   },
@@ -50,7 +61,8 @@
     "section": "",
     "text": "Sources\nALL 2025 Information\n\nGeneral Info\nEligibility\n\n\n\nSummary\nThough there’s structure and information set up about different tiers of eligibility and premiums, since 2014 in reality it seems like everyone has just used the main eligibility tables. For now, then, we just use this.\n\n\nLogic\nFor now, we’re just saying either you DO or DO NOT qualify for medicaid based on household composition by comparing gross monthly income to limit.",
     "crumbs": [
-      "Quarto",
+      "Home",
+      "Overall Benefits Roadmap",
       "Info",
       "Medicaid"
     ]
@@ -62,7 +74,8 @@
     "section": "",
     "text": "All 2025 Information. We do this in a pretty basic fashion: assume standard deductions, apply standard brackets, and then calculate credits.",
     "crumbs": [
-      "Quarto",
+      "Home",
+      "Overall Benefits Roadmap",
       "Info",
       "Tax Calculations"
     ]
@@ -74,7 +87,8 @@
     "section": "Deductions",
     "text": "Deductions\n\nSee here for Federal Deductions\nSee Page 12 for VT standard deductions, and page 11 for personal exemptions (just the number of people times a constant).",
     "crumbs": [
-      "Quarto",
+      "Home",
+      "Overall Benefits Roadmap",
       "Info",
       "Tax Calculations"
     ]
@@ -86,7 +100,8 @@
     "section": "EITC",
     "text": "EITC\n\nSee here for Federal EITC tables (the maximum).\nSee here for listing of all parameters. \nSee here for information about Vermont Earned Income Tax Credit. The actual tax documents would not load at time of processing.",
     "crumbs": [
-      "Quarto",
+      "Home",
+      "Overall Benefits Roadmap",
       "Info",
       "Tax Calculations"
     ]
@@ -98,7 +113,8 @@
     "section": "",
     "text": "See https://dcf.vermont.gov/benefits/3SquaresVT for basic information.\nSee also Snap Eligibility for a more extensive walkthrough.\nThe Policy Manual is our ultimate source of truth",
     "crumbs": [
-      "Quarto",
+      "Home",
+      "Overall Benefits Roadmap",
       "Info",
       "Three Squares"
     ]
@@ -110,7 +126,8 @@
     "section": "Eligibility",
     "text": "Eligibility\nBasically, you can either get Three Squares because gross, or net monthly income: if you are under the limit for your household size.",
     "crumbs": [
-      "Quarto",
+      "Home",
+      "Overall Benefits Roadmap",
       "Info",
       "Three Squares"
     ]
@@ -122,7 +139,8 @@
     "section": "Processing",
     "text": "Processing\nIf eligible, multiply the max benefit for that household size minus 30% of the net monthly income, and that’s your benefit.",
     "crumbs": [
-      "Quarto",
+      "Home",
+      "Overall Benefits Roadmap",
       "Info",
       "Three Squares"
     ]
@@ -134,7 +152,8 @@
     "section": "",
     "text": "Sources\n\nGeneral Info\nMax CCFA payouts in 2024\n\n\n\nAccepted Service Needs\n\nOption A: Every Caretaker must have at least one of these:\n\nA job\nself employed\nactively looking for work\nattending school or traiing\nparticipating in Reach UP\nhas special needs\n\nOption B: child has:\n\nhealth or developmental needs\nopen case with DCF and child care is part of safety plan\n\nOPTION C: family has:\n\nfamily is experiencing significant stress in shelter, safety, emotional stability, etc.\n\n\n\n\nLogic",
     "crumbs": [
-      "Quarto",
+      "Home",
+      "Overall Benefits Roadmap",
       "Info",
       "Child Care Subsidy"
     ]
@@ -144,9 +163,23 @@
     "href": "Quarto/info/reachup.html",
     "title": "Reach Up",
     "section": "",
-    "text": "Sources\n\nSee here for all the rules\nSee Vermont Legislature Overview for easier to parse numbers.\n\n\n\nOverview\nPer Vermont Legislature Overview, basically, reach up is:\nBasic Needs + Shelter Allowance + Special Housing Allowance (if applicable) = Total needs\nThen\nTotal Needs x Ratable Percentage = Maximum Grant for Family size\nThen\nMaximum Grant - Countable Income = Reach up Grant\nThat is",
+    "text": "See here for all the rules\nSee Vermont Legislature Overview for easier to parse numbers.",
     "crumbs": [
-      "Quarto",
+      "Home",
+      "Overall Benefits Roadmap",
+      "Info",
+      "Reach Up"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/reachup.html#caveats",
+    "href": "Quarto/info/reachup.html#caveats",
+    "title": "Reach Up",
+    "section": "Caveats",
+    "text": "Caveats\n\nThis logic *ignores",
+    "crumbs": [
+      "Home",
+      "Overall Benefits Roadmap",
       "Info",
       "Reach Up"
     ]

@@ -6,7 +6,10 @@ export interface DependentChild {
   childcareType: ChildcareType;
 }
 
-export type TaxFilingStatus = "single" | "marriedFilingJointly" | "headOfHousehold";
+export type TaxFilingStatus =
+  | "single"
+  | "marriedFilingJointly"
+  | "headOfHousehold";
 
 // main input
 export interface RawHouseholdData {
@@ -22,17 +25,21 @@ export interface RawHouseholdData {
 // secondary input
 export interface SupplementalInfo {
   hasPregnantMember?: boolean;
+  inChittenden?: boolean;
+  inSubsidizedHousing?: boolean;
 }
 
 // data storage
 export interface ProcessedHouseholdData {
   grossMonthlyIncome: number;
   netMonthlyIncome: number;
+  earnedMonthlyIncome: number;
   monthlyChildcareCost: number;
   adults: number;
-  children: number;
+  children: DependentChild[];
   householdSize: number;
   taxFilingStatus: TaxFilingStatus;
+  monthlyShelterCost: number;
 }
 
 export interface BenefitResult {

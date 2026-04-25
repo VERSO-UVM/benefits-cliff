@@ -68,17 +68,19 @@ export default function processHouseholdData(
   data: RawHouseholdData,
   _supplemental: SupplementalInfo,
 ): ProcessedHouseholdData {
-  const children = data.dependentChildren.length;
+  const householdSize = data.dependentChildren.length + data.adults;
   const processedIncome = processIncomeForBenefits(data);
   const childcareCost = processChildcareCost(data);
 
   return {
     grossMonthlyIncome: processedIncome.grossMonthlyIncome,
     netMonthlyIncome: processedIncome.netMonthlyIncome,
+    earnedMonthlyIncome: data.earnedMonthlyIncome,
     adults: data.adults,
-    children,
-    householdSize: data.adults + children,
+    children: data.dependentChildren,
+    householdSize: householdSize,
     monthlyChildcareCost: childcareCost,
     taxFilingStatus: data.taxFilingStatus,
+    monthlyShelterCost: data.monthlyShelterCost,
   };
 }
