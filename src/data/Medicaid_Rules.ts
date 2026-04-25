@@ -1,3 +1,10 @@
+import type {
+  BenefitProcessedHouseholdData,
+  SupplementalInfo,
+  BenefitResult,
+} from "../types";
+import { BENEFIT_URLS } from "./benefitUrls";
+
 const Medicaid_Values = {
   MedicaidForAdults: {
     1: 1800,
@@ -43,4 +50,43 @@ export function getMedicaidLimit(
   const limits = Medicaid_Values[type];
   householdSize = Math.min(householdSize, 8);
   return limits[householdSize as keyof typeof limits] as number;
+}
+
+export function calculateMedicaid(
+  data: BenefitProcessedHouseholdData,
+  supplemental: SupplementalInfo,
+): BenefitResult[] {
+  const results: BenefitResult[] = [];
+  const numberChildren = data.children.filter((child) => child.age < 19).length;
+
+  const checks = [
+    {
+      condition: numberChildren > 0,
+      type: "ChildrenUnder19" as MedicaidLimitType,
+      name: "DrDynasaur (Medicaid for Children)",
+    },
+    {
+      condition: supplemental.hasPregnantMember,
+      type: "PregnantWomen" as MedicaidLimitType,
+      name: "Medicaid for Pregnant Women",
+    },
+    {
+      condition: true,
+      type: "MedicaidForAdults" as MedicaidLimitType,
+      name: "Medicaid for Adults",
+    },
+  ];
+
+  checks.forEach(({ condition, type, name }) => {
+    if (condition) {
+      const limit = getMedicaidLimit(data.householdSize, type);
+      results.push({
+        name,
+        eligible: data.grossMonthlyIncome <= limit,
+        url: BENEFIT_URLS.medicaid,
+      });
+    }
+  });
+
+  return results;
 }

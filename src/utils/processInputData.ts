@@ -1,18 +1,10 @@
 import type {
   RawHouseholdData,
-  ProcessedHouseholdData,
+  BenefitProcessedHouseholdData,
   SupplementalInfo,
+  TaxProcessedData,
 } from "../types";
 import { netIncomeDeduction } from "../data/Net_Income";
-import { getWeeklyChildcarePaymentMax } from "../data/ccfap";
-import type { ChildAgeRange, ChildcareInformation } from "../data/ccfap";
-
-function ageToRange(age: number): ChildAgeRange {
-  if (age < 2) return "infant";
-  if (age < 3) return "toddler";
-  if (age < 6) return "preschool";
-  return "schoolAge";
-}
 
 function processIncomeForBenefits(data: RawHouseholdData): {
   grossMonthlyIncome: number;
@@ -48,29 +40,12 @@ function processIncomeForBenefits(data: RawHouseholdData): {
   };
 }
 
-function processChildcareCost(data: RawHouseholdData): number {
-  if (data.dependentChildren.length === 0 || data.monthlyChildcareCost === 0)
-    return 0;
-
-  const totalWeeklyMax = data.dependentChildren.reduce((sum, child) => {
-    const childcareInfo: ChildcareInformation = {
-      childAgeRange: ageToRange(child.age),
-      childcareDuration: child.childcareDuration,
-      childcareType: child.childcareType,
-    };
-    return sum + getWeeklyChildcarePaymentMax(childcareInfo);
-  }, 0);
-
-  return Math.min(data.monthlyChildcareCost, totalWeeklyMax * 4.33);
-}
-
-export default function processHouseholdData(
+export function processBenefitHouseholdData(
   data: RawHouseholdData,
   _supplemental: SupplementalInfo,
-): ProcessedHouseholdData {
+): BenefitProcessedHouseholdData {
   const householdSize = data.dependentChildren.length + data.adults;
   const processedIncome = processIncomeForBenefits(data);
-  const childcareCost = processChildcareCost(data);
 
   return {
     grossMonthlyIncome: processedIncome.grossMonthlyIncome,
@@ -79,8 +54,22 @@ export default function processHouseholdData(
     adults: data.adults,
     children: data.dependentChildren,
     householdSize: householdSize,
-    monthlyChildcareCost: childcareCost,
-    taxFilingStatus: data.taxFilingStatus,
+    monthlyChildcareCost: data.monthlyChildcareCost,
     monthlyShelterCost: data.monthlyShelterCost,
+  };
+}
+
+const FILING_STATUS_CODE = {
+  single: 1,
+  marriedFilingJointly: 2,
+  headOfHousehold: 3,
+} as const;
+
+export function processTaxData(data: RawHouseholdData): TaxProcessedData {
+  return {
+    filingStatus: FILING_STATUS_CODE[data.taxFilingStatus],
+    grossAnnualIncome: (data.earnedMonthlyIncome + data.unearnedMonthlyIncome) * 12,
+    earnedAnnualIncome: data.earnedMonthlyIncome * 12,
+    children: data.dependentChildren,
   };
 }

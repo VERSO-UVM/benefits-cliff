@@ -104,7 +104,11 @@ function DependentChildrenSection({
   const addChild = () =>
     onChange([
       ...children,
-      { age: 0, childcareDuration: "fullTime", childcareType: "licensedCenter" },
+      {
+        age: 0,
+        childcareDuration: "fullTime",
+        childcareType: "licensedCenter",
+      },
     ]);
 
   const updateChild = (i: number, updated: DependentChild) =>

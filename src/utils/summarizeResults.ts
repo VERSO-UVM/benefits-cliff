@@ -1,5 +1,5 @@
-import type { CalculationResult, ProcessedHouseholdData } from "../types";
+import type { CalculationResult, BenefitProcessedHouseholdData } from "../types";
 
-function IncomeOverTime({ data }: { data: ProcessedHouseholdData }) {
+function IncomeOverTime({ data }: { data: BenefitProcessedHouseholdData }) {
   income = data.grossMonthlyIncome;
 }

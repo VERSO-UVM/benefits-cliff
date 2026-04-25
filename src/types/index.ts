@@ -24,13 +24,13 @@ export interface RawHouseholdData {
 
 // secondary input
 export interface SupplementalInfo {
-  hasPregnantMember?: boolean;
-  inChittenden?: boolean;
-  inSubsidizedHousing?: boolean;
+  hasPregnantMember: boolean;
+  inChittenden: boolean;
+  inSubsidizedHousing: boolean;
 }
 
 // data storage
-export interface ProcessedHouseholdData {
+export interface BenefitProcessedHouseholdData {
   grossMonthlyIncome: number;
   netMonthlyIncome: number;
   earnedMonthlyIncome: number;
@@ -38,17 +38,32 @@ export interface ProcessedHouseholdData {
   adults: number;
   children: DependentChild[];
   householdSize: number;
-  taxFilingStatus: TaxFilingStatus;
   monthlyShelterCost: number;
+}
+
+// tax data storage — all income figures are annual
+export interface TaxProcessedData {
+  filingStatus: number; // 1=single, 2=marriedFilingJointly, 3=headOfHousehold
+  grossAnnualIncome: number;
+  earnedAnnualIncome: number;
+  children: DependentChild[];
+}
+
+export interface TaxCreditResult {
+  name: string;
+  annualAmount: number;
+  url?: string;
 }
 
 export interface BenefitResult {
   name: string;
   eligible: boolean;
   amount?: number;
+  url?: string;
 }
 
 export interface CalculationResult {
   income: number;
   benefits: BenefitResult[];
+  taxCredits: TaxCreditResult[];
 }

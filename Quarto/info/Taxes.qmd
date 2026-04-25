@@ -11,7 +11,7 @@ All 2025 Information. We do this in a pretty basic fashion: assume standard dedu
 
 ## Deductions
 - See [here](https://www.irs.gov/pub/irs-pdf/p501.pdf) for Federal Deductions 
-- See [Page 12](https://tax.vermont.gov/sites/tax/files/documents/Income-Booklet-2025.pdf) for VT standard deductions, and page 11 for personal exemptions (just the number of people times a constant). 
+- See [Page 12](https://tax.vermont.gov/sites/tax/files/documents/Income-Booklet-2025.pdf) for VT standard deductions, and page 19 for personal exemptions (just the number of people times a constant). 
 
 # Brackets
 - See [here](https://www.irs.gov/filing/federal-income-tax-rates-and-brackets) for Federal Taxes brackets.
@@ -25,6 +25,10 @@ All 2025 Information. We do this in a pretty basic fashion: assume standard dedu
 - See [here](https://answerconnect.cch.com/document/jvt0109013e2c87426ae1/state/explanations/vermont/earned-income-credit) for information about Vermont Earned Income Tax Credit. The actual tax documents would not load at time of processing. 
 
 ## Child Tax Credit
+- Note: we assume that all children have SSNs. 
+- See[here](https://www.irs.gov/credits-deductions/individuals/child-tax-credit) for overall information
+- See[here](https://www.irs.gov/pub/irs-drop/rp-24-40.pdf) for specific values in 2025 
+
 
 
 # Logic
@@ -40,3 +44,5 @@ All 2025 Information. We do this in a pretty basic fashion: assume standard dedu
         * get phaseout amount with similar method: from phaseout start to phaseout end divided by maximum credit
         * multiple the two rates by actual amount of phase in and phase out 
         * return credits  minus debits
+    2. Vermont Tax Credit:
+        * Just multiply federal by a flat rate

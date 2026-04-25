@@ -1,3 +1,6 @@
+import type { BenefitProcessedHouseholdData, BenefitResult } from "../types";
+import { BENEFIT_URLS } from "./benefitUrls";
+
 const CCFAP_COPAY_SCHEDULE = {
   3: [
     { maxIncome: 3331, weeklyCopay: 0 },
@@ -81,17 +84,6 @@ const CCFAP_COPAY_SCHEDULE = {
   ],
 };
 
-export function getWeeklyCopay(
-  householdSize: number,
-  income: number,
-): number | null {
-  householdSize = Math.max(3, Math.min(householdSize, 6)); // in 3-6 range
-  const schedule =
-    CCFAP_COPAY_SCHEDULE[householdSize as keyof typeof CCFAP_COPAY_SCHEDULE];
-  const bracket = schedule.find((item) => income <= item.maxIncome);
-  return bracket ? bracket.weeklyCopay : null;
-}
-
 const CCFAP_Payment_Maxes = {
   licensedCenter: {
     infant: {
@@ -139,10 +131,18 @@ const CCFAP_Payment_Maxes = {
   },
 };
 
-export type ChildAgeRange = "infant" | "toddler" | "preschool" | "schoolAge";
+function getWeeklyCopay(householdSize: number, income: number): number | null {
+  householdSize = Math.max(3, Math.min(householdSize, 6)); // in 3-6 range
+  const schedule =
+    CCFAP_COPAY_SCHEDULE[householdSize as keyof typeof CCFAP_COPAY_SCHEDULE];
+  const bracket = schedule.find((item) => income <= item.maxIncome);
+  return bracket ? bracket.weeklyCopay : null;
+}
+
+type ChildAgeRange = "infant" | "toddler" | "preschool" | "schoolAge";
 export type ChildcareDuration = "fullTime" | "partTime" | "extendedCare";
 export type ChildcareType = "registeredHome" | "licensedCenter";
-export type ChildcareInformation = {
+type ChildcareInformation = {
   childAgeRange: ChildAgeRange;
   childcareDuration: ChildcareDuration;
   childcareType: ChildcareType;
@@ -161,4 +161,58 @@ export function getWeeklyChildcarePaymentMax(
   }
 
   return rate;
+}
+
+function getAgeRange(age: number): ChildAgeRange {
+  if (age < 1) return "infant";
+  if (age < 3) return "toddler";
+  if (age < 6) return "preschool";
+  return "schoolAge";
+}
+
+export function calculateCCFAP(
+  data: BenefitProcessedHouseholdData,
+): BenefitResult {
+  // No children = not eligible
+  const childrenWithCare = data.children.filter(
+    (child) => child.childcareDuration !== null,
+  );
+  let totalWeeklyBenefit = 0;
+
+  const weeklyCopay = getWeeklyCopay(
+    data.householdSize,
+    data.grossMonthlyIncome,
+  );
+  if (weeklyCopay === null) {
+    return {
+      name: "Childcare Subsidy",
+      eligible: false,
+      url: BENEFIT_URLS.ccfap,
+    };
+  } // no benefit
+
+  // loop over all children and accumulate their weekly benefit.
+  for (const child of childrenWithCare) {
+    const childcareInfo: ChildcareInformation = {
+      childAgeRange: getAgeRange(child.age),
+      childcareDuration: child.childcareDuration,
+      childcareType: child.childcareType,
+    };
+    const weeklyMax = getWeeklyChildcarePaymentMax(childcareInfo);
+    const weeklyActual =
+      data.monthlyChildcareCost / data.children.length / 4.33; // assume cost equally spread
+    const weeklyCovered = Math.min(weeklyActual, weeklyMax);
+    const weeklyBenefit = Math.max(
+      0,
+      weeklyCovered - weeklyCopay / childrenWithCare.length,
+    );
+    totalWeeklyBenefit += weeklyBenefit;
+  }
+  const monthlyBenefit = Math.round(totalWeeklyBenefit * 4.33);
+  return {
+    name: "Childcare Subsidy",
+    amount: monthlyBenefit,
+    eligible: monthlyBenefit > 0,
+    url: BENEFIT_URLS.ccfap,
+  };
 }

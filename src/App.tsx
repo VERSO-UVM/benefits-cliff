@@ -7,25 +7,31 @@ import { Title, Center, Alert, Stack, Text } from "@mantine/core";
 
 import type {
   RawHouseholdData,
-  ProcessedHouseholdData,
+  BenefitProcessedHouseholdData,
+  TaxProcessedData,
   CalculationResult,
   SupplementalInfo,
 } from "./types";
-
-import processHouseholdData from "./utils/processHouseholdData";
+import {
+  processBenefitHouseholdData,
+  processTaxData,
+} from "./utils/processInputData";
 
 function App() {
   const [processedData, setProcessedData] =
-    useState<ProcessedHouseholdData | null>(null);
+    useState<BenefitProcessedHouseholdData | null>(null);
+  const [taxData, setTaxData] = useState<TaxProcessedData | null>(null);
   const [result, setResult] = useState<CalculationResult | null>(null);
 
   const handleCalculate = (
     data: RawHouseholdData,
     supplemental: SupplementalInfo,
   ) => {
-    const processed = processHouseholdData(data, supplemental);
+    const processed = processBenefitHouseholdData(data, supplemental);
+    const tax = processTaxData(data);
     setProcessedData(processed);
-    setResult(calculateBenefits(processed, data, supplemental));
+    setTaxData(tax);
+    setResult(calculateBenefits(processed, supplemental, tax));
   };
 
   return (

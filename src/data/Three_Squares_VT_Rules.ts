@@ -1,5 +1,8 @@
 // note, this is sourced from the fpl csv files, themselves sourced from the page
 
+import type { BenefitProcessedHouseholdData, BenefitResult } from "../types";
+import { BENEFIT_URLS } from "./benefitUrls";
+
 const Three_Squares_VT_Values_2025 = {
   grossMonthlyLimit: {
     1: 2413,
@@ -44,7 +47,7 @@ const Three_Squares_VT_Values_2025 = {
 
 type SNAPLimitType = "grossMonthlyLimit" | "netMonthlyLimit" | "maximumBenefit";
 
-export function getThreeSquaresValues(
+function getThreeSquaresValues(
   householdSize: number,
   type: SNAPLimitType,
 ): number {
@@ -55,4 +58,27 @@ export function getThreeSquaresValues(
   }
 
   return limits[10] + (householdSize - 10) * limits.additionalMember;
+}
+
+export function calculateThreeSquares(
+  data: BenefitProcessedHouseholdData,
+): BenefitResult {
+  const { householdSize, grossMonthlyIncome, netMonthlyIncome } = data;
+
+  const grossLimit = getThreeSquaresValues(householdSize, "grossMonthlyLimit");
+  const netLimit = getThreeSquaresValues(householdSize, "netMonthlyLimit");
+  const maxBenefit = getThreeSquaresValues(householdSize, "maximumBenefit");
+
+  const eligible: boolean =
+    grossMonthlyIncome <= grossLimit || netMonthlyIncome <= netLimit;
+  const benefit = eligible
+    ? Math.max(0, Math.round(maxBenefit - netMonthlyIncome * 0.3))
+    : 0;
+
+  return {
+    name: "Three Squares",
+    eligible: eligible,
+    amount: benefit,
+    url: BENEFIT_URLS.threeSquares,
+  };
 }

@@ -1,5 +1,7 @@
 // NOTE: everything is on an *annual* scale here.
 
+import type { DependentChild } from "../types";
+
 const FEDERAL_BRACKETS = {
   // Single Payer
   1: [
@@ -160,7 +162,7 @@ const FEDERAL_EITC = {
   },
 };
 
-function SumBasicFederalTaxes(
+export function SumBasicFederalTaxes(
   filingStatus: number,
   grossIncome: number,
 ): number {
@@ -202,8 +204,9 @@ function SumFICATaxes(selfEmployed: Boolean, earnedIncome: number): number {
 function SumBasicVermontTaxes(
   filingStatus: number,
   grossIncome: number,
-  numberChildren: number,
+  children: DependentChild[],
 ): number {
+  const numberChildren = children.filter((child) => child.age <= 19).length;
   let exemptions = numberChildren + 1;
   if (filingStatus === 2) {
     exemptions += 1;
@@ -231,10 +234,9 @@ function SumBasicVermontTaxes(
 function CalculateFederalEITC(
   filingStatus: number,
   earnedIncome: number,
-  numberChildren: number,
+  children: DependentChild[],
 ): number {
-  numberChildren = Math.min(numberChildren, 3);
-  let credit = 0;
+  const numberChildren = children.filter((c) => c.age < 19).length;
 
   // access data structure
   const schedules = FEDERAL_EITC[filingStatus as keyof typeof FEDERAL_EITC];
@@ -258,35 +260,83 @@ function CalculateVT_EITC(federalEITC: number): number {
   return federalEITC * 0.38;
 }
 
+/// This is *just* the income - debits (adjusted by nonrefundable credits). The credits are returned elsewhere.
 export function CalculateAnnualAfterTaxIncome(
   filingStatus: number,
   grossIncome: number,
-  numberChildren: number,
+  children: DependentChild[],
   earnedIncome: number,
   selfEmployed: boolean,
 ): number {
   const federalTaxes = SumBasicFederalTaxes(filingStatus, grossIncome);
   const FICATaxes = SumFICATaxes(selfEmployed, earnedIncome);
-  const VTTaxes = SumBasicVermontTaxes(
-    filingStatus,
+  const VTTaxes = SumBasicVermontTaxes(filingStatus, grossIncome, children);
+  const childCredits = CalculateChildTaxCredits(
     grossIncome,
-    numberChildren,
+    earnedIncome,
+    children,
+    filingStatus,
+    federalTaxes,
   );
-
-  const debits = federalTaxes + FICATaxes + VTTaxes;
+  const debits = Math.max(
+    federalTaxes + FICATaxes + VTTaxes - childCredits.nonRefundable,
+    0,
+  );
   return grossIncome - debits;
 }
 
 export function CalculateEarnedTaxCredits(
   filingStatus: number,
   earnedIncome: number,
-  numberChildren: number,
+  children: DependentChild[],
 ): { federal: number; vermont: number } {
   const FederalCredits = CalculateFederalEITC(
     filingStatus,
     earnedIncome,
-    numberChildren,
+    children,
   );
   const VermontCredits = CalculateVT_EITC(FederalCredits);
   return { federal: FederalCredits, vermont: VermontCredits };
+}
+
+const CHILD_VALUE = 2200;
+
+const ChildCreditThresholds = {
+  1: 200000,
+  2: 400000,
+  3: 200000,
+};
+
+export function CalculateChildTaxCredits(
+  grossIncome: number,
+  earnedIncome: number,
+  children: DependentChild[],
+  filingStatus: number,
+  federalTaxOwed: number,
+): { nonRefundable: number; additionalCredit: number } {
+  const numberChildren = children.filter((child) => child.age < 17).length;
+  const childrenValue = numberChildren * CHILD_VALUE;
+
+  // calculate threshold
+  const creditThreshold =
+    ChildCreditThresholds[filingStatus as keyof typeof ChildCreditThresholds];
+  const incomeOverThreshold = Math.max(0, grossIncome - creditThreshold);
+  const nextIncomeMultipleOver = Math.ceil(incomeOverThreshold / 1000) * 1000;
+  const scaledIncomeMultipleOver = nextIncomeMultipleOver * 0.05;
+
+  // see remaining value as credit
+  const creditOverThreshold = Math.max(
+    0,
+    childrenValue - scaledIncomeMultipleOver,
+  );
+  const nonRefundable = Math.min(creditOverThreshold, federalTaxOwed);
+  const creditable = creditOverThreshold - nonRefundable;
+  const refundableCap = numberChildren * 1700;
+  const earnedIncomeBased = Math.max(0, earnedIncome - 2500) * 0.15;
+  const additionalCredit = Math.min(
+    creditable,
+    refundableCap,
+    earnedIncomeBased,
+  );
+  return { nonRefundable: nonRefundable, additionalCredit: additionalCredit };
 }

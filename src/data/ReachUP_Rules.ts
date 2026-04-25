@@ -1,3 +1,10 @@
+import type {
+  BenefitProcessedHouseholdData,
+  BenefitResult,
+  SupplementalInfo,
+} from "../types";
+import { BENEFIT_URLS } from "./benefitUrls";
+
 const REACH_UP_BASIC_NEEDS = {
   1: 644,
   2: 942,
@@ -33,7 +40,7 @@ function calculateBasicNeeds(familySize: number): number {
 function calculateShelter(
   inChittenden: boolean,
   rent: number,
-  inSubsidizedHousing?: boolean,
+  inSubsidizedHousing: boolean,
 ): number {
   const shelterIndex = inChittenden ? "insideChittenden" : "outsideChittenden";
   const maxShelter = REACH_UP_SHELTER[shelterIndex];
@@ -57,20 +64,36 @@ function calculateCountableIncome(earnedIncome: number): number {
 }
 
 export function calculateReachUp(
-  familySize: number,
-  inChittenden: boolean,
-  rent: number,
-  earnedIncome: number,
-  inSubsidizedHousing?: boolean,
-): number {
-  const basicNeeds = calculateBasicNeeds(familySize);
-  const shelterWithAllowance = calculateShelter(inChittenden, rent);
-  const countableIncome = calculateCountableIncome(earnedIncome);
-  console.log(countableIncome);
+  data: BenefitProcessedHouseholdData,
+  supplemental: SupplementalInfo,
+): BenefitResult {
+  const eligible =
+    data.children.filter((child) => child.age < 18).length > 0 ||
+    supplemental.hasPregnantMember;
+  if (!eligible)
+    return {
+      name: "Reach Up",
+      eligible: false,
+      url: BENEFIT_URLS.reachUp,
+    };
 
+  // calculate main variables
+  const basicNeeds = calculateBasicNeeds(data.householdSize);
+  const shelterWithAllowance = calculateShelter(
+    supplemental.inChittenden,
+    data.monthlyShelterCost,
+    supplemental.inSubsidizedHousing,
+  );
+  const countableIncome = calculateCountableIncome(data.earnedMonthlyIncome);
+
+  // perform main calculation
   const totalNeeds = basicNeeds + shelterWithAllowance;
   const maximumGrant = totalNeeds * REACH_UP_RATABLE;
-  console.log(maximumGrant);
-  const reachUpGrant = maximumGrant - countableIncome;
-  return Math.floor(Math.max(reachUpGrant, 0));
+  const reachUpGrant = Math.round(maximumGrant - countableIncome);
+  return {
+    name: "Reach Up",
+    eligible: reachUpGrant > 0,
+    amount: reachUpGrant,
+    url: BENEFIT_URLS.reachUp,
+  };
 }
