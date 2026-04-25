@@ -1,0 +1,30 @@
+---
+title: "Three Squares" 
+author: Fitz Koch
+date: today
+description:  Detailing sources and basic logic for 3 Squares VT Logic. 
+---
+
+
+# Sourcing
+
+- See [https://dcf.vermont.gov/benefits/3SquaresVT](vermont.gov) for basic information.
+- See also [Snap Eligibility](https://snapeligibilitycalculator.com/snap-benefits-by-state/vermont/) for a more extensive walkthrough.
+- The [Policy Manual](https://www.ahsnet.ahs.state.vt.us/Public/3sVT/assets/BRM/1700DetIncDeduct.htm#IncomeLimits) is our ultimate source of truth
+
+# Basic Eligibility:
+
+- Your gross household income is equal to or less than 185% of the Federal Poverty Level, or
+- You have children and get the VT Earned Income Tax Credit.
+
+You may still qualify if your income is over the limit if your household includes someone 60+ or with a disability, but we'll consider the resources you own (with a few exceptions, like your home and certain retirement accounts).
+
+If you get 3SquaresVT benefits and are between the ages of 16 and 59, you may need to meet work rules unless you are exempt or excused.
+
+# Logic
+
+## Eligibility 
+Basically, you can either get Three Squares because gross, or net monthly income: if you are under the limit for your household size. 
+
+## Processing
+If eligible, multiply the max benefit for that household size minus 30% of the net monthly income, and that's your benefit.

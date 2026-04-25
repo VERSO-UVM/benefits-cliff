@@ -1,0 +1,43 @@
+---
+title: Overall Benefits Roadmap
+author: Fitz Koch
+date: today
+description:  Summary of the project and a roadmap of what will be included in it.
+---
+
+Generally, this is intended as a modernization of 
+[this presentation](https://legislature.vermont.gov/Documents/2018/WorkGroups/House%20General/Highlights/4%20-%20Minimum%20Wage%20%20The%20%E2%80%9CBenefits%20Cliff%E2%80%9D%20Presentation.pdf)
+for both users and legislators. 
+
+# Key functionality
+- User-facing tool to estimate their own benefits and how it might change over time. 
+- Legislator-facing tool to see how benefits change with different combinations of variables
+    - eventually, how these variables compare to actual state-wide census variables 
+- Repository of sourced overview of how benefits are calculated, for those who are interested. 
+
+# Road Map
+
+## Monthly Benefits
+- [x] 3 Squares
+- [ ] Child Care Subsidy (partially implemented)
+    - [ ] Partially implemented 
+- [ ] Reach Up
+- [ ] LIHEAP
+- [ ] Lifeline
+- [ ] VT Premium subsidy
+- [ ] Cost sharing VTHC
+- [x] Medicaid
+
+## Tax / Annual
+- [x] Fed. EITC
+- [x] VT EITC
+- [ ] Fed child tax credits
+- [ ] Fed child/dependent care
+- [ ] VT child/dependent care
+- [ ] Fed. Premium subsidy (ACA)
+- [ ] Renter's Rebate
+
+
+## Base
+- [x] After-Tax Income
+- [x] VT Income Tax

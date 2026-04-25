@@ -1,6 +1,11 @@
+---
+title: Tax Calculations
+author: Fitz Koch
+date: today
+description:  Sources and logic for calculating everything related to taxes (including credits)
+---
 
-
-All 2025 Information.
+All 2025 Information. We do this in a pretty basic fashion: assume standard deductions, apply standard brackets, and then calculate credits. 
 
 # Sources
 

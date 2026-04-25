@@ -1,0 +1,31 @@
+---
+title: Reach Up
+author: Fitz Koch
+date: today
+description:  Sources and logic for calculating Vermont's Reach Up program.
+---
+
+
+
+# Sources 
+- See [here](https://dcf.vermont.gov/esd/laws-rules/proposed/P2200) for all the rules
+- See  [Vermont Legislature Overview](https://legislature.vermont.gov/assets/Legislative-Reports/Reach-Up-Ratable-Reduction-Mar-2024.pdf) for easier to parse numbers.
+
+
+
+# Overview
+Per  [Vermont Legislature Overview](https://legislature.vermont.gov/assets/Legislative-Reports/Reach-Up-Ratable-Reduction-Mar-2024.pdf), basically, reach up is:
+
+Basic Needs + Shelter Allowance + Special Housing Allowance (if applicable) = Total needs 
+
+Then 
+
+Total Needs x Ratable Percentage = Maximum Grant for Family size 
+
+Then
+
+Maximum Grant - Countable Income = Reach up Grant
+
+
+That is 
+

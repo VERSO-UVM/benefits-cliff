@@ -1,3 +1,11 @@
+---
+title: "Child Care Subsidy" 
+author: Fitz Koch
+date: today
+description:  Detailing sources and basic logic for CCFAP  logic.
+---
+
+
 # Sources 
 
 * [General Info](https://dcf.vermont.gov/benefits/ccfap)
@@ -18,3 +26,4 @@
 * OPTION C: family has:
     * family is experiencing significant stress in shelter, safety, emotional stability, etc. 
 
+# Logic

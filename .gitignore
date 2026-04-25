@@ -26,3 +26,5 @@ dist-ssr
 
 ## playground
 *playground*
+/.quarto/
+**/*.quarto_ipynb

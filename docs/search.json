@@ -1,0 +1,154 @@
+[
+  {
+    "objectID": "Quarto/overall_design.html",
+    "href": "Quarto/overall_design.html",
+    "title": "Overall Benefits Roadmap",
+    "section": "",
+    "text": "Generally, this is intended as a modernization of this presentation for both users and legislators.",
+    "crumbs": [
+      "Quarto",
+      "Overall Benefits Roadmap"
+    ]
+  },
+  {
+    "objectID": "Quarto/overall_design.html#monthly-benefits",
+    "href": "Quarto/overall_design.html#monthly-benefits",
+    "title": "Overall Benefits Roadmap",
+    "section": "Monthly Benefits",
+    "text": "Monthly Benefits\n\n3 Squares\nChild Care Subsidy (partially implemented)\n\nPartially implemented\n\nReach Up\nLIHEAP\nLifeline\nVT Premium subsidy\nCost sharing VTHC\nMedicaid",
+    "crumbs": [
+      "Quarto",
+      "Overall Benefits Roadmap"
+    ]
+  },
+  {
+    "objectID": "Quarto/overall_design.html#tax-annual",
+    "href": "Quarto/overall_design.html#tax-annual",
+    "title": "Overall Benefits Roadmap",
+    "section": "Tax / Annual",
+    "text": "Tax / Annual\n\nFed. EITC\nVT EITC\nFed child tax credits\nFed child/dependent care\nVT child/dependent care\nFed. Premium subsidy (ACA)\nRenter’s Rebate",
+    "crumbs": [
+      "Quarto",
+      "Overall Benefits Roadmap"
+    ]
+  },
+  {
+    "objectID": "Quarto/overall_design.html#base",
+    "href": "Quarto/overall_design.html#base",
+    "title": "Overall Benefits Roadmap",
+    "section": "Base",
+    "text": "Base\n\nAfter-Tax Income\nVT Income Tax",
+    "crumbs": [
+      "Quarto",
+      "Overall Benefits Roadmap"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/medicaid.html",
+    "href": "Quarto/info/medicaid.html",
+    "title": "Sources",
+    "section": "",
+    "text": "Sources\nALL 2025 Information\n\nGeneral Info\nEligibility\n\n\n\nSummary\nThough there’s structure and information set up about different tiers of eligibility and premiums, since 2014 in reality it seems like everyone has just used the main eligibility tables. For now, then, we just use this.\n\n\nLogic\nFor now, we’re just saying either you DO or DO NOT qualify for medicaid based on household composition by comparing gross monthly income to limit.",
+    "crumbs": [
+      "Quarto",
+      "Info",
+      "Sources"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/Taxes.html",
+    "href": "Quarto/info/Taxes.html",
+    "title": "Tax Calculations",
+    "section": "",
+    "text": "All 2025 Information. We do this in a pretty basic fashion: assume standard deductions, apply standard brackets, and then calculate credits.",
+    "crumbs": [
+      "Quarto",
+      "Info",
+      "Tax Calculations"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/Taxes.html#deductions",
+    "href": "Quarto/info/Taxes.html#deductions",
+    "title": "Tax Calculations",
+    "section": "Deductions",
+    "text": "Deductions\n\nSee here for Federal Deductions\nSee Page 12 for VT standard deductions, and page 11 for personal exemptions (just the number of people times a constant).",
+    "crumbs": [
+      "Quarto",
+      "Info",
+      "Tax Calculations"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/Taxes.html#eitc",
+    "href": "Quarto/info/Taxes.html#eitc",
+    "title": "Tax Calculations",
+    "section": "EITC",
+    "text": "EITC\n\nSee here for Federal EITC tables (the maximum).\nSee here for listing of all parameters. \nSee here for information about Vermont Earned Income Tax Credit. The actual tax documents would not load at time of processing.",
+    "crumbs": [
+      "Quarto",
+      "Info",
+      "Tax Calculations"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/3quaresvt.html",
+    "href": "Quarto/info/3quaresvt.html",
+    "title": "Three Squares",
+    "section": "",
+    "text": "See https://dcf.vermont.gov/benefits/3SquaresVT for basic information.\nSee also Snap Eligibility for a more extensive walkthrough.\nThe Policy Manual is our ultimate source of truth",
+    "crumbs": [
+      "Quarto",
+      "Info",
+      "Three Squares"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/3quaresvt.html#eligibility",
+    "href": "Quarto/info/3quaresvt.html#eligibility",
+    "title": "Three Squares",
+    "section": "Eligibility",
+    "text": "Eligibility\nBasically, you can either get Three Squares because gross, or net monthly income: if you are under the limit for your household size.",
+    "crumbs": [
+      "Quarto",
+      "Info",
+      "Three Squares"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/3quaresvt.html#processing",
+    "href": "Quarto/info/3quaresvt.html#processing",
+    "title": "Three Squares",
+    "section": "Processing",
+    "text": "Processing\nIf eligible, multiply the max benefit for that household size minus 30% of the net monthly income, and that’s your benefit.",
+    "crumbs": [
+      "Quarto",
+      "Info",
+      "Three Squares"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/ccfap.html",
+    "href": "Quarto/info/ccfap.html",
+    "title": "Child Care Subsidy",
+    "section": "",
+    "text": "Sources\n\nGeneral Info\nMax CCFA payouts in 2024\n\n\n\nAccepted Service Needs\n\nOption A: Every Caretaker must have at least one of these:\n\nA job\nself employed\nactively looking for work\nattending school or traiing\nparticipating in Reach UP\nhas special needs\n\nOption B: child has:\n\nhealth or developmental needs\nopen case with DCF and child care is part of safety plan\n\nOPTION C: family has:\n\nfamily is experiencing significant stress in shelter, safety, emotional stability, etc.\n\n\n\n\nLogic",
+    "crumbs": [
+      "Quarto",
+      "Info",
+      "Child Care Subsidy"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/reachup.html",
+    "href": "Quarto/info/reachup.html",
+    "title": "Reach Up",
+    "section": "",
+    "text": "Sources\n\nSee here for all the rules\nSee Vermont Legislature Overview for easier to parse numbers.\n\n\n\nOverview\nPer Vermont Legislature Overview, basically, reach up is:\nBasic Needs + Shelter Allowance + Special Housing Allowance (if applicable) = Total needs\nThen\nTotal Needs x Ratable Percentage = Maximum Grant for Family size\nThen\nMaximum Grant - Countable Income = Reach up Grant\nThat is",
+    "crumbs": [
+      "Quarto",
+      "Info",
+      "Reach Up"
+    ]
+  }
+]
