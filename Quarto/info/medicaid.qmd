@@ -1,3 +1,11 @@
+---
+title: "Medicaid" 
+author: Fitz Koch
+date: today
+description:  Detailing sources and basic logic for 3 Squares VT Logic. 
+---
+
+
 # Sources
 
 ALL 2025 Information
@@ -11,4 +19,6 @@ ALL 2025 Information
 Though there's structure and information set up about different tiers of eligibility and premiums, since 2014 in reality it seems like everyone has just used the main eligibility tables. For now, then, we just use this.
 
 # Logic
-For now, we're just saying either you DO or DO NOT qualify for medicaid based on household composition by comparing gross monthly income to limit. 
+For now, we're just saying either you DO or DO NOT qualify for medicaid based on household composition by comparing gross monthly income to limit.
+
+

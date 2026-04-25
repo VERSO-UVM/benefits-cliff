@@ -7,13 +7,13 @@ description:  Summary of the project and a roadmap of what will be included in i
 
 Generally, this is intended as a modernization of 
 [this presentation](https://legislature.vermont.gov/Documents/2018/WorkGroups/House%20General/Highlights/4%20-%20Minimum%20Wage%20%20The%20%E2%80%9CBenefits%20Cliff%E2%80%9D%20Presentation.pdf)
-for both users and legislators. 
+for both users and legislators. To see how each piece is calculated, check out the `Info` tab in the table of contents on the left.
 
 # Key functionality
 - User-facing tool to estimate their own benefits and how it might change over time. 
 - Legislator-facing tool to see how benefits change with different combinations of variables
     - eventually, how these variables compare to actual state-wide census variables 
-- Repository of sourced overview of how benefits are calculated, for those who are interested. 
+- Repository of sourced overview of how benefits are calculated, for those who are interested.
 
 # Road Map
 

@@ -4,7 +4,7 @@
     "href": "Quarto/overall_design.html",
     "title": "Overall Benefits Roadmap",
     "section": "",
-    "text": "Generally, this is intended as a modernization of this presentation for both users and legislators.",
+    "text": "Generally, this is intended as a modernization of this presentation for both users and legislators. To see how each piece is calculated, check out the Info tab in the table of contents on the left.",
     "crumbs": [
       "Quarto",
       "Overall Benefits Roadmap"
@@ -46,13 +46,13 @@
   {
     "objectID": "Quarto/info/medicaid.html",
     "href": "Quarto/info/medicaid.html",
-    "title": "Sources",
+    "title": "Medicaid",
     "section": "",
     "text": "Sources\nALL 2025 Information\n\nGeneral Info\nEligibility\n\n\n\nSummary\nThough there’s structure and information set up about different tiers of eligibility and premiums, since 2014 in reality it seems like everyone has just used the main eligibility tables. For now, then, we just use this.\n\n\nLogic\nFor now, we’re just saying either you DO or DO NOT qualify for medicaid based on household composition by comparing gross monthly income to limit.",
     "crumbs": [
       "Quarto",
       "Info",
-      "Sources"
+      "Medicaid"
     ]
   },
   {
