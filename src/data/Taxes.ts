@@ -236,7 +236,7 @@ function CalculateFederalEITC(
   earnedIncome: number,
   children: DependentChild[],
 ): number {
-  const numberChildren = children.filter((c) => c.age < 19).length;
+  const numberChildren = Math.min(3, children.filter((c) => c.age < 19).length);
 
   // access data structure
   const schedules = FEDERAL_EITC[filingStatus as keyof typeof FEDERAL_EITC];
@@ -283,6 +283,16 @@ export function CalculateAnnualAfterTaxIncome(
     0,
   );
   return grossIncome - debits;
+}
+
+export function calculateAfterIncomeTax(
+  filingStatus: number,
+  grossAnnualIncome: number,
+  children: DependentChild[],
+): number {
+  const federal = SumBasicFederalTaxes(filingStatus, grossAnnualIncome);
+  const vermont = SumBasicVermontTaxes(filingStatus, grossAnnualIncome, children);
+  return Math.max(0, grossAnnualIncome - federal - vermont);
 }
 
 export function CalculateEarnedTaxCredits(

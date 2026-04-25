@@ -3,12 +3,12 @@ import { useState } from "react";
 import MainInputForm from "./components/MainInputForm";
 import calculateBenefits from "./utils/benefitCalculators";
 import Results from "./components/BenefitsDisplay";
+import BenefitsChart from "./components/BenefitsChart";
 import { Title, Center, Alert, Stack, Text } from "@mantine/core";
 
 import type {
   RawHouseholdData,
   BenefitProcessedHouseholdData,
-  TaxProcessedData,
   CalculationResult,
   SupplementalInfo,
 } from "./types";
@@ -20,8 +20,10 @@ import {
 function App() {
   const [processedData, setProcessedData] =
     useState<BenefitProcessedHouseholdData | null>(null);
-  const [taxData, setTaxData] = useState<TaxProcessedData | null>(null);
   const [result, setResult] = useState<CalculationResult | null>(null);
+  const [rawData, setRawData] = useState<RawHouseholdData | null>(null);
+  const [supplementalData, setSupplementalData] =
+    useState<SupplementalInfo | null>(null);
 
   const handleCalculate = (
     data: RawHouseholdData,
@@ -29,8 +31,9 @@ function App() {
   ) => {
     const processed = processBenefitHouseholdData(data, supplemental);
     const tax = processTaxData(data);
+    setRawData(data);
+    setSupplementalData(supplemental);
     setProcessedData(processed);
-    setTaxData(tax);
     setResult(calculateBenefits(processed, supplemental, tax));
   };
 
@@ -41,8 +44,11 @@ function App() {
           <Title order={1}>Vermont Benefits Estimator</Title>
 
           <MainInputForm onCalculate={handleCalculate} />
-          {result && processedData && (
-            <Results result={result} processedData={processedData} />
+          {result && processedData && rawData && supplementalData && (
+            <>
+              <Results result={result} processedData={processedData} />
+              <BenefitsChart rawData={rawData} supplemental={supplementalData} />
+            </>
           )}
           <Alert
             color="red"
