@@ -7,7 +7,7 @@ description:  Summary of the project and a roadmap of what will be included in i
 
 Generally, this is intended as a modernization of 
 [this presentation](https://legislature.vermont.gov/Documents/2018/WorkGroups/House%20General/Highlights/4%20-%20Minimum%20Wage%20%20The%20%E2%80%9CBenefits%20Cliff%E2%80%9D%20Presentation.pdf)
-for both users and legislators. To see how each piece is calculated, check out the `Info` tab in the table of contents on the left.
+for both users and legislators. To see how each piece is calculated, check out the `info` tab in the table of contents on the left.
 
 # Key functionality
 - User-facing tool to estimate their own benefits and how it might change over time. 
@@ -29,9 +29,9 @@ for both users and legislators. To see how each piece is calculated, check out t
 
 | Benefit | Status |
 |---------|--------|
-| [3 Squares](info/3squaresvt.qmd) | Complete |
-| [Child Care Subsidy](info/ccfap.qmd) | Partial |
-| [Reach Up](info/reachup.qmd) | Complete |
+| [3 Squares](Quarto/info/3squaresvt.qmd) | Complete |
+| [Child Care Subsidy](Quarto/info/ccfap.qmd) | Partial |
+| [Reach Up](Quarto/info/reachup.qmd) | Complete |
 | LIHEAP | Planned |
 | Lifeline | Planned |
 | VT Premium subsidy | Planned |
@@ -42,8 +42,8 @@ for both users and legislators. To see how each piece is calculated, check out t
 
 | Benefit | Status |
 |---------|--------|
-| [Fed. EITC](info/Taxes.qmd) | Complete |
-| [VT EITC](info/Taxes.qmd) | Complete |
+| [Fed. EITC](Quarto/info/Taxes.qmd) | Complete |
+| [VT EITC](Quarto/info/Taxes.qmd) | Complete |
 | Fed child tax credits | Planned |
 | Fed child/dependent care | Planned |
 | VT child/dependent care | Planned |
@@ -54,8 +54,8 @@ for both users and legislators. To see how each piece is calculated, check out t
 
 | Benefit | Status |
 |---------|--------|
-| [After-Tax Income](info/Taxes.qmd) | Complete |
-| [VT Income Tax](info/Taxes.qmd) | Complete |
+| [After-Tax Income](Quarto/info/Taxes.qmd) | Complete |
+| [VT Income Tax](Quarto/info/Taxes.qmd) | Complete |
 
 
 ## 

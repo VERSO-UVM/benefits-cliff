@@ -2,6 +2,7 @@ project:
   type: website
   output-dir: docs
   render:
+    - /*.qmd
     - Quarto/*/*.qmd 
     - Quarto/*.qmd
 
@@ -12,7 +13,7 @@ website:
     contents: auto
   navbar:
     left:
-      - href: Quarto/index.qmd
+      - href: index.qmd
         text: Home
   
 format: 

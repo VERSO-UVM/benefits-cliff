@@ -94,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../Quarto/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -108,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Quarto/index.html">Overall Benefits Roadmap</a></li><li class="breadcrumb-item"><a href="../../Quarto/info/3squaresvt.html">Info</a></li><li class="breadcrumb-item"><a href="../../Quarto/info/Taxes.html">Tax Calculations</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quarto</li><li class="breadcrumb-item"><a href="../../Quarto/info/3squaresvt.html">Info</a></li><li class="breadcrumb-item"><a href="../../Quarto/info/Taxes.html">Tax Calculations</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -120,10 +120,16 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../test.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Benefits Cliff Estimator Notebook</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../Quarto/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overall Benefits Roadmap</span></a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quarto</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -185,6 +191,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#brackets" id="toc-brackets" class="nav-link" data-scroll-target="#brackets">Brackets</a>
   <ul class="collapse">
   <li><a href="#eitc" id="toc-eitc" class="nav-link" data-scroll-target="#eitc">EITC</a></li>
+  <li><a href="#child-tax-credit" id="toc-child-tax-credit" class="nav-link" data-scroll-target="#child-tax-credit">Child Tax Credit</a></li>
   </ul></li>
   <li><a href="#logic" id="toc-logic" class="nav-link" data-scroll-target="#logic">Logic</a></li>
   </ul>
@@ -197,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content column-page-right" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Quarto/index.html">Overall Benefits Roadmap</a></li><li class="breadcrumb-item"><a href="../../Quarto/info/3squaresvt.html">Info</a></li><li class="breadcrumb-item"><a href="../../Quarto/info/Taxes.html">Tax Calculations</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quarto</li><li class="breadcrumb-item"><a href="../../Quarto/info/3squaresvt.html">Info</a></li><li class="breadcrumb-item"><a href="../../Quarto/info/Taxes.html">Tax Calculations</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Tax Calculations</h1>
 </div>
@@ -254,10 +261,13 @@ ul.task-list li input[type="checkbox"] {
 <section id="eitc" class="level2">
 <h2 class="anchored" data-anchor-id="eitc">EITC</h2>
 <ul>
-<li><p>See <a href="https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-and-earned-income-tax-credit-eitc-tables#eitctables">here</a> for Federal EITC tables (the maximum).</p></li>
-<li><p>See <a href="https://taxpolicycenter.org/statistics/eitc-parameters">here</a> for listing of all parameters. <img src="../Figures/image.png" class="img-fluid" alt="This figure has the proper results"></p></li>
-<li><p>See <a href="https://answerconnect.cch.com/document/jvt0109013e2c87426ae1/state/explanations/vermont/earned-income-credit">here</a> for information about Vermont Earned Income Tax Credit. The actual tax documents would not load at time of processing.</p></li>
+<li>See <a href="https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-and-earned-income-tax-credit-eitc-tables#eitctables">here</a> for Federal EITC tables (the maximum).</li>
+<li>See <a href="https://taxpolicycenter.org/statistics/eitc-parameters">here</a> for listing of all parameters. <img src="../Figures/image.png" class="img-fluid" alt="This figure has the proper results"></li>
+<li>See <a href="https://answerconnect.cch.com/document/jvt0109013e2c87426ae1/state/explanations/vermont/earned-income-credit">here</a> for information about Vermont Earned Income Tax Credit. The actual tax documents would not load at time of processing.</li>
 </ul>
+</section>
+<section id="child-tax-credit" class="level2">
+<h2 class="anchored" data-anchor-id="child-tax-credit">Child Tax Credit</h2>
 </section>
 </section>
 <section id="logic" class="level1">
@@ -284,7 +294,6 @@ ul.task-list li input[type="checkbox"] {
 <li>multiple the two rates by actual amount of phase in and phase out</li>
 <li>return credits minus debits</li>
 </ul></li>
-<li>VT EITC: just do federal *</li>
 </ol></li>
 </ol>
 

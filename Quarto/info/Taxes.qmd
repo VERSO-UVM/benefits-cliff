@@ -22,8 +22,10 @@ All 2025 Information. We do this in a pretty basic fashion: assume standard dedu
 - See [here](https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-and-earned-income-tax-credit-eitc-tables#eitctables)  for Federal EITC tables (the maximum). 
 - See [here](https://taxpolicycenter.org/statistics/eitc-parameters) for listing of all parameters. 
 ![This figure has the proper results](../Figures/image.png)
-
 - See [here](https://answerconnect.cch.com/document/jvt0109013e2c87426ae1/state/explanations/vermont/earned-income-credit) for information about Vermont Earned Income Tax Credit. The actual tax documents would not load at time of processing. 
+
+## Child Tax Credit
+
 
 # Logic
 1. Calculate Taxes per polity:
@@ -38,4 +40,3 @@ All 2025 Information. We do this in a pretty basic fashion: assume standard dedu
         * get phaseout amount with similar method: from phaseout start to phaseout end divided by maximum credit
         * multiple the two rates by actual amount of phase in and phase out 
         * return credits  minus debits
-    2. VT EITC: just do federal * 
