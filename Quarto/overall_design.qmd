@@ -18,26 +18,33 @@ for both users and legislators. To see how each piece is calculated, check out t
 # Road Map
 
 ## Monthly Benefits
-- [x] 3 Squares
-- [ ] Child Care Subsidy (partially implemented)
-    - [ ] Partially implemented 
-- [ ] Reach Up
-- [ ] LIHEAP
-- [ ] Lifeline
-- [ ] VT Premium subsidy
-- [ ] Cost sharing VTHC
-- [x] Medicaid
+
+| Benefit | Status |
+|---------|--------|
+| [3 Squares](info/3squaresvt.qmd) | Complete |
+| [Child Care Subsidy](info/ccfap.qmd) | Partial |
+| [Reach Up](info/reachup.qmd) | Planned |
+| LIHEAP | Planned |
+| Lifeline | Planned |
+| VT Premium subsidy | Planned |
+| Cost sharing VTHC | Planned |
+| Medicaid | Complete |
 
 ## Tax / Annual
-- [x] Fed. EITC
-- [x] VT EITC
-- [ ] Fed child tax credits
-- [ ] Fed child/dependent care
-- [ ] VT child/dependent care
-- [ ] Fed. Premium subsidy (ACA)
-- [ ] Renter's Rebate
 
+| Benefit | Status |
+|---------|--------|
+| [Fed. EITC](info/Taxes.qmd) | Complete |
+| [VT EITC](info/Taxes.qmd) | Complete |
+| Fed child tax credits | Planned |
+| Fed child/dependent care | Planned |
+| VT child/dependent care | Planned |
+| Fed. Premium subsidy (ACA) | Planned |
+| Renter's Rebate | Planned |
 
 ## Base
-- [x] After-Tax Income
-- [x] VT Income Tax
+
+| Benefit | Status |
+|---------|--------|
+| [After-Tax Income](info/Taxes.qmd) | Complete |
+| [VT Income Tax](info/Taxes.qmd) | Complete |

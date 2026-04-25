@@ -15,7 +15,7 @@
     "href": "Quarto/overall_design.html#monthly-benefits",
     "title": "Overall Benefits Roadmap",
     "section": "Monthly Benefits",
-    "text": "Monthly Benefits\n\n3 Squares\nChild Care Subsidy (partially implemented)\n\nPartially implemented\n\nReach Up\nLIHEAP\nLifeline\nVT Premium subsidy\nCost sharing VTHC\nMedicaid",
+    "text": "Monthly Benefits\n\n\n\nBenefit\nStatus\n\n\n\n\n3 Squares\nComplete\n\n\nChild Care Subsidy\nPartial\n\n\nReach Up\nPlanned\n\n\nLIHEAP\nPlanned\n\n\nLifeline\nPlanned\n\n\nVT Premium subsidy\nPlanned\n\n\nCost sharing VTHC\nPlanned\n\n\nMedicaid\nComplete",
     "crumbs": [
       "Quarto",
       "Overall Benefits Roadmap"
@@ -26,7 +26,7 @@
     "href": "Quarto/overall_design.html#tax-annual",
     "title": "Overall Benefits Roadmap",
     "section": "Tax / Annual",
-    "text": "Tax / Annual\n\nFed. EITC\nVT EITC\nFed child tax credits\nFed child/dependent care\nVT child/dependent care\nFed. Premium subsidy (ACA)\nRenter’s Rebate",
+    "text": "Tax / Annual\n\n\n\nBenefit\nStatus\n\n\n\n\nFed. EITC\nComplete\n\n\nVT EITC\nComplete\n\n\nFed child tax credits\nPlanned\n\n\nFed child/dependent care\nPlanned\n\n\nVT child/dependent care\nPlanned\n\n\nFed. Premium subsidy (ACA)\nPlanned\n\n\nRenter’s Rebate\nPlanned",
     "crumbs": [
       "Quarto",
       "Overall Benefits Roadmap"
@@ -37,7 +37,7 @@
     "href": "Quarto/overall_design.html#base",
     "title": "Overall Benefits Roadmap",
     "section": "Base",
-    "text": "Base\n\nAfter-Tax Income\nVT Income Tax",
+    "text": "Base\n\n\n\nBenefit\nStatus\n\n\n\n\nAfter-Tax Income\nComplete\n\n\nVT Income Tax\nComplete",
     "crumbs": [
       "Quarto",
       "Overall Benefits Roadmap"
@@ -92,8 +92,8 @@
     ]
   },
   {
-    "objectID": "Quarto/info/3quaresvt.html",
-    "href": "Quarto/info/3quaresvt.html",
+    "objectID": "Quarto/info/3squaresvt.html",
+    "href": "Quarto/info/3squaresvt.html",
     "title": "Three Squares",
     "section": "",
     "text": "See https://dcf.vermont.gov/benefits/3SquaresVT for basic information.\nSee also Snap Eligibility for a more extensive walkthrough.\nThe Policy Manual is our ultimate source of truth",
@@ -104,8 +104,8 @@
     ]
   },
   {
-    "objectID": "Quarto/info/3quaresvt.html#eligibility",
-    "href": "Quarto/info/3quaresvt.html#eligibility",
+    "objectID": "Quarto/info/3squaresvt.html#eligibility",
+    "href": "Quarto/info/3squaresvt.html#eligibility",
     "title": "Three Squares",
     "section": "Eligibility",
     "text": "Eligibility\nBasically, you can either get Three Squares because gross, or net monthly income: if you are under the limit for your household size.",
@@ -116,8 +116,8 @@
     ]
   },
   {
-    "objectID": "Quarto/info/3quaresvt.html#processing",
-    "href": "Quarto/info/3quaresvt.html#processing",
+    "objectID": "Quarto/info/3squaresvt.html#processing",
+    "href": "Quarto/info/3squaresvt.html#processing",
     "title": "Three Squares",
     "section": "Processing",
     "text": "Processing\nIf eligible, multiply the max benefit for that household size minus 30% of the net monthly income, and that’s your benefit.",
