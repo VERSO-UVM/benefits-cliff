@@ -247,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="deductions">Deductions</h2>
 <ul>
 <li>See <a href="https://www.irs.gov/pub/irs-pdf/p501.pdf">here</a> for Federal Deductions</li>
-<li>See <a href="https://tax.vermont.gov/sites/tax/files/documents/Income-Booklet-2025.pdf">Page 12</a> for VT standard deductions, and page 11 for personal exemptions (just the number of people times a constant).</li>
+<li>See <a href="https://tax.vermont.gov/sites/tax/files/documents/Income-Booklet-2025.pdf">Page 12</a> for VT standard deductions, and page 19 for personal exemptions (just the number of people times a constant).</li>
 </ul>
 </section>
 </section>
@@ -268,6 +268,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="child-tax-credit" class="level2">
 <h2 class="anchored" data-anchor-id="child-tax-credit">Child Tax Credit</h2>
+<ul>
+<li>Note: we assume that all children have SSNs.</li>
+<li>See<a href="https://www.irs.gov/credits-deductions/individuals/child-tax-credit">here</a> for overall information</li>
+<li>See<a href="https://www.irs.gov/pub/irs-drop/rp-24-40.pdf">here</a> for specific values in 2025</li>
+</ul>
 </section>
 </section>
 <section id="logic" class="level1">
@@ -293,6 +298,10 @@ ul.task-list li input[type="checkbox"] {
 <li>get phaseout amount with similar method: from phaseout start to phaseout end divided by maximum credit</li>
 <li>multiple the two rates by actual amount of phase in and phase out</li>
 <li>return credits minus debits</li>
+</ul></li>
+<li>Vermont Tax Credit:
+<ul>
+<li>Just multiply federal by a flat rate</li>
 </ul></li>
 </ol></li>
 </ol>

@@ -80,35 +80,35 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Overall Benefits Roadmap",
+    "title": "Benefits Estimator Overview and Roadmap",
     "section": "",
-    "text": "Generally, this is intended as a modernization of this presentation for both users and legislators. To see how each piece is calculated, check out the info tab in the table of contents on the left."
+    "text": "Generally, this is intended as an interactive modernization of this presentation for both users and legislators. To see how each piece is calculated, check out the info tab in the table of contents on the left."
   },
   {
     "objectID": "index.html#features",
     "href": "index.html#features",
-    "title": "Overall Benefits Roadmap",
+    "title": "Benefits Estimator Overview and Roadmap",
     "section": "Features",
     "text": "Features\n\n\n\nFeature\nStatus\n\n\n\n\nCallouts\nPlanned\n\n\nUser-facing calculator\nPartial\n\n\nLegislator-facing calculator\nPlanned"
   },
   {
     "objectID": "index.html#monthly-benefits",
     "href": "index.html#monthly-benefits",
-    "title": "Overall Benefits Roadmap",
+    "title": "Benefits Estimator Overview and Roadmap",
     "section": "Monthly Benefits",
-    "text": "Monthly Benefits\n\n\n\nBenefit\nStatus\n\n\n\n\n3 Squares\nComplete\n\n\nChild Care Subsidy\nPartial\n\n\nReach Up\nComplete\n\n\nLIHEAP\nPlanned\n\n\nLifeline\nPlanned\n\n\nVT Premium subsidy\nPlanned\n\n\nCost sharing VTHC\nPlanned\n\n\nMedicaid\nComplete"
+    "text": "Monthly Benefits\n\n\n\nBenefit\nStatus\n\n\n\n\n3 Squares\nComplete\n\n\nChild Care Subsidy\nComplete\n\n\nReach Up\nComplete\n\n\nLIHEAP\nPlanned\n\n\nLifeline\nPlanned\n\n\nVT Premium subsidy\nPlanned\n\n\nCost sharing VTHC\nPlanned\n\n\nMedicaid\nComplete"
   },
   {
     "objectID": "index.html#tax-annual",
     "href": "index.html#tax-annual",
-    "title": "Overall Benefits Roadmap",
+    "title": "Benefits Estimator Overview and Roadmap",
     "section": "Tax / Annual",
-    "text": "Tax / Annual\n\n\n\nBenefit\nStatus\n\n\n\n\nFed. EITC\nComplete\n\n\nVT EITC\nComplete\n\n\nFed child tax credits\nPlanned\n\n\nFed child/dependent care\nPlanned\n\n\nVT child/dependent care\nPlanned\n\n\nFed. Premium subsidy (ACA)\nPlanned\n\n\nRenter’s Rebate\nPlanned"
+    "text": "Tax / Annual\n\n\n\nBenefit\nStatus\n\n\n\n\nFed. EITC\nComplete\n\n\nVT EITC\nComplete\n\n\nFed child tax credits\nComplete\n\n\nFed child/dependent care\nPlanned\n\n\nVT child/dependent care\nPlanned\n\n\nFed. Premium subsidy (ACA)\nPlanned\n\n\nRenter’s Rebate\nPlanned"
   },
   {
     "objectID": "index.html#base",
     "href": "index.html#base",
-    "title": "Overall Benefits Roadmap",
+    "title": "Benefits Estimator Overview and Roadmap",
     "section": "Base",
     "text": "Base\n\n\n\nBenefit\nStatus\n\n\n\n\nAfter-Tax Income\nComplete\n\n\nVT Income Tax\nComplete"
   },
@@ -141,7 +141,7 @@
     "href": "Quarto/info/Taxes.html#deductions",
     "title": "Tax Calculations",
     "section": "Deductions",
-    "text": "Deductions\n\nSee here for Federal Deductions\nSee Page 12 for VT standard deductions, and page 11 for personal exemptions (just the number of people times a constant).",
+    "text": "Deductions\n\nSee here for Federal Deductions\nSee Page 12 for VT standard deductions, and page 19 for personal exemptions (just the number of people times a constant).",
     "crumbs": [
       "Home",
       "Quarto",
@@ -167,7 +167,7 @@
     "href": "Quarto/info/Taxes.html#child-tax-credit",
     "title": "Tax Calculations",
     "section": "Child Tax Credit",
-    "text": "Child Tax Credit",
+    "text": "Child Tax Credit\n\nNote: we assume that all children have SSNs.\nSeehere for overall information\nSeehere for specific values in 2025",
     "crumbs": [
       "Home",
       "Quarto",
