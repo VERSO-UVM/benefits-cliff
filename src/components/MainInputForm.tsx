@@ -20,6 +20,7 @@ import {
   CloseButton,
   Text,
 } from "@mantine/core";
+import { DESCRIPTIONS } from "./formDescriptions";
 
 interface InputFormProps {
   onCalculate: (data: RawHouseholdData, supplement: SupplementalInfo) => void;
@@ -188,7 +189,7 @@ export default function MainInputForm({ onCalculate }: InputFormProps) {
 
   const [supplemental, setSupplemental] = useState<SupplementalInfo>({
     hasPregnantMember: false,
-    inChittenden: false,
+    inChittenden: true,
     inSubsidizedHousing: false,
   });
 
@@ -221,6 +222,7 @@ export default function MainInputForm({ onCalculate }: InputFormProps) {
         <Stack gap="md">
           <NumberInput
             label="Earned Monthly Income"
+            description={DESCRIPTIONS.earnedMonthlyIncome}
             value={formData.earnedMonthlyIncome}
             onChange={(value) =>
               setFormData((prev) => ({
@@ -236,6 +238,7 @@ export default function MainInputForm({ onCalculate }: InputFormProps) {
 
           <NumberInput
             label="Unearned Monthly Income"
+            description={DESCRIPTIONS.unearnedMonthlyIncome}
             value={formData.unearnedMonthlyIncome}
             onChange={(value) =>
               setFormData((prev) => ({
@@ -251,6 +254,7 @@ export default function MainInputForm({ onCalculate }: InputFormProps) {
 
           <NumberInput
             label="Adults in Household"
+            description={DESCRIPTIONS.adultsInHousehold}
             value={formData.adults}
             onChange={(value) =>
               setFormData((prev) => ({ ...prev, adults: Number(value) }))
@@ -273,7 +277,7 @@ export default function MainInputForm({ onCalculate }: InputFormProps) {
             description={
               locked !== null
                 ? "Determined by household composition"
-                : undefined
+                : DESCRIPTIONS.taxFilingStatus
             }
           />
 
@@ -286,6 +290,7 @@ export default function MainInputForm({ onCalculate }: InputFormProps) {
 
           <NumberInput
             label="Monthly Shelter Cost"
+            description={DESCRIPTIONS.monthlyShelterCost}
             value={formData.monthlyShelterCost}
             onChange={(value) =>
               setFormData((prev) => ({
@@ -301,6 +306,7 @@ export default function MainInputForm({ onCalculate }: InputFormProps) {
 
           <NumberInput
             label="Monthly Childcare Cost"
+            description={DESCRIPTIONS.monthlyChildcareCost}
             value={formData.monthlyChildcareCost}
             onChange={(value) =>
               setFormData((prev) => ({

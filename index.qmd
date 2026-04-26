@@ -9,6 +9,10 @@ Generally, this is intended as an interactive modernization of
 [this presentation](https://legislature.vermont.gov/Documents/2018/WorkGroups/House%20General/Highlights/4%20-%20Minimum%20Wage%20%20The%20%E2%80%9CBenefits%20Cliff%E2%80%9D%20Presentation.pdf)
 for both users and legislators. To see how each piece is calculated, check out the `info` tab in the table of contents on the left.
 
+# Main site:
+
+<iframe src="app/index.html" width="100%" height="800px" frameborder="0"></iframe>
+
 # Key functionality
 - User-facing tool to estimate their own benefits and how it might change over time. 
 - Legislator-facing tool to see how benefits change with different combinations of variables
@@ -16,7 +20,7 @@ for both users and legislators. To see how each piece is calculated, check out t
 - Repository of sourced overview of how benefits are calculated, for those who are interested.
 
 
-# Application Links 
+# Selected Application Links 
 - (Reach UP and 3Squares)[https://dcf.vermont.gov/esd/applicants/mybenefits]
 - (Child Care Subsidy)[https://cddfamily.my.vermont.gov/s/] 
 
@@ -28,7 +32,7 @@ for both users and legislators. To see how each piece is calculated, check out t
 | Feature | Status |
 |-------- | -------| 
 | Callouts | Planned |
-| User-facing calculator | Partial |
+| User-facing calculator | Complete (with present benefits) |
 | Legislator-facing calculator | Planned | 
 
 ## Monthly Benefits
@@ -42,7 +46,7 @@ for both users and legislators. To see how each piece is calculated, check out t
 | Lifeline | Planned |
 | VT Premium subsidy | Planned |
 | Cost sharing VTHC | Planned |
-| Medicaid | Complete |
+| [Medicaid](Quarto/info/medicaid.qmd) | Complete |
 
 ## Tax / Annual
 
@@ -50,7 +54,7 @@ for both users and legislators. To see how each piece is calculated, check out t
 |---------|--------|
 | [Fed. EITC](Quarto/info/Taxes.qmd) | Complete |
 | [VT EITC](Quarto/info/Taxes.qmd) | Complete |
-| Fed child tax credits | Complete |
+| [Fed child tax credits](Quarto/info/Taxes.qmd) | Complete |
 | Fed child/dependent care | Planned |
 | VT child/dependent care | Planned |
 | Fed. Premium subsidy (ACA) | Planned |

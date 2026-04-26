@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Fitz Koch">
-<meta name="dcterms.date" content="2026-04-25">
+<meta name="dcterms.date" content="2026-04-26">
 <meta name="description" content="Summary of the project and a roadmap of what will be included in it.">
 
 <title>Benefits Estimator Overview and Roadmap – Benefits Estimator</title>
@@ -119,12 +119,6 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Benefits Cliff Estimator Notebook</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -134,6 +128,12 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Quarto/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Benefits Estimator Overview and Roadmap</span></a>
+  </div>
+</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -183,8 +183,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#key-functionality" id="toc-key-functionality" class="nav-link active" data-scroll-target="#key-functionality">Key functionality</a></li>
-  <li><a href="#application-links" id="toc-application-links" class="nav-link" data-scroll-target="#application-links">Application Links</a></li>
+  <li><a href="#main-site" id="toc-main-site" class="nav-link active" data-scroll-target="#main-site">Main site:</a></li>
+  <li><a href="#key-functionality" id="toc-key-functionality" class="nav-link" data-scroll-target="#key-functionality">Key functionality</a></li>
+  <li><a href="#selected-application-links" id="toc-selected-application-links" class="nav-link" data-scroll-target="#selected-application-links">Selected Application Links</a></li>
   <li><a href="#road-map" id="toc-road-map" class="nav-link" data-scroll-target="#road-map">Road Map</a>
   <ul class="collapse">
   <li><a href="#features" id="toc-features" class="nav-link" data-scroll-target="#features">Features</a></li>
@@ -226,7 +227,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 25, 2026</p>
+      <p class="date">April 26, 2026</p>
     </div>
   </div>
   
@@ -239,6 +240,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Generally, this is intended as an interactive modernization of <a href="https://legislature.vermont.gov/Documents/2018/WorkGroups/House%20General/Highlights/4%20-%20Minimum%20Wage%20%20The%20%E2%80%9CBenefits%20Cliff%E2%80%9D%20Presentation.pdf">this presentation</a> for both users and legislators. To see how each piece is calculated, check out the <code>info</code> tab in the table of contents on the left.</p>
+<section id="main-site" class="level1">
+<h1>Main site:</h1>
+<iframe src="app/index.html" width="100%" height="800px" frameborder="0">
+</iframe>
+</section>
 <section id="key-functionality" class="level1">
 <h1>Key functionality</h1>
 <ul>
@@ -250,8 +256,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Repository of sourced overview of how benefits are calculated, for those who are interested.</li>
 </ul>
 </section>
-<section id="application-links" class="level1">
-<h1>Application Links</h1>
+<section id="selected-application-links" class="level1">
+<h1>Selected Application Links</h1>
 <ul>
 <li>(Reach UP and 3Squares)[https://dcf.vermont.gov/esd/applicants/mybenefits]</li>
 <li>(Child Care Subsidy)[https://cddfamily.my.vermont.gov/s/]</li>
@@ -275,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>User-facing calculator</td>
-<td>Partial</td>
+<td>Complete (with present benefits)</td>
 </tr>
 <tr class="odd">
 <td>Legislator-facing calculator</td>
@@ -323,7 +329,7 @@ ul.task-list li input[type="checkbox"] {
 <td>Planned</td>
 </tr>
 <tr class="even">
-<td>Medicaid</td>
+<td><a href="./Quarto/info/medicaid.html">Medicaid</a></td>
 <td>Complete</td>
 </tr>
 </tbody>
@@ -348,7 +354,7 @@ ul.task-list li input[type="checkbox"] {
 <td>Complete</td>
 </tr>
 <tr class="odd">
-<td>Fed child tax credits</td>
+<td><a href="./Quarto/info/Taxes.html">Fed child tax credits</a></td>
 <td>Complete</td>
 </tr>
 <tr class="even">

@@ -223,6 +223,8 @@ export default function BenefitsChart({ rawData, supplemental }: Props) {
           <CartesianGrid strokeDasharray="3 3" opacity={0.4} />
           <XAxis
             dataKey="annualIncome"
+            angle={-45}
+            textAnchor="end"
             tickFormatter={fmtDollars}
             label={{
               value: "Annual Earned Income",

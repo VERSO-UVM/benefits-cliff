@@ -1,126 +1,15 @@
 [
   {
-    "objectID": "Quarto/info/reachup.html",
-    "href": "Quarto/info/reachup.html",
-    "title": "Reach Up",
+    "objectID": "Quarto/info/medicaid.html",
+    "href": "Quarto/info/medicaid.html",
+    "title": "Medicaid",
     "section": "",
-    "text": "See here for all the rules\nSee Vermont Legislature Overview for easier to parse numbers.",
+    "text": "Sources\nALL 2025 Information\n\nGeneral Info\nEligibility\n\n\n\nSummary\nThough there’s structure and information set up about different tiers of eligibility and premiums, since 2014 in reality it seems like everyone has just used the main eligibility tables. For now, then, we just use this.\n\n\nLogic\nFor now, we’re just saying either you DO or DO NOT qualify for medicaid based on household composition by comparing gross monthly income to limit.",
     "crumbs": [
       "Home",
       "Quarto",
       "Info",
-      "Reach Up"
-    ]
-  },
-  {
-    "objectID": "Quarto/info/reachup.html#caveats",
-    "href": "Quarto/info/reachup.html#caveats",
-    "title": "Reach Up",
-    "section": "Caveats",
-    "text": "Caveats\n\nThis logic *ignores",
-    "crumbs": [
-      "Home",
-      "Quarto",
-      "Info",
-      "Reach Up"
-    ]
-  },
-  {
-    "objectID": "Quarto/info/ccfap.html",
-    "href": "Quarto/info/ccfap.html",
-    "title": "Child Care Subsidy",
-    "section": "",
-    "text": "Sources\n\nGeneral Info\nMax CCFA payouts in 2024\n\n\n\nAccepted Service Needs\n\nOption A: Every Caretaker must have at least one of these:\n\nA job\nself employed\nactively looking for work\nattending school or traiing\nparticipating in Reach UP\nhas special needs\n\nOption B: child has:\n\nhealth or developmental needs\nopen case with DCF and child care is part of safety plan\n\nOPTION C: family has:\n\nfamily is experiencing significant stress in shelter, safety, emotional stability, etc.\n\n\n\n\nLogic",
-    "crumbs": [
-      "Home",
-      "Quarto",
-      "Info",
-      "Child Care Subsidy"
-    ]
-  },
-  {
-    "objectID": "Quarto/info/3squaresvt.html",
-    "href": "Quarto/info/3squaresvt.html",
-    "title": "Three Squares",
-    "section": "",
-    "text": "See https://dcf.vermont.gov/benefits/3SquaresVT for basic information.\nSee also Snap Eligibility for a more extensive walkthrough.\nThe Policy Manual is our ultimate source of truth",
-    "crumbs": [
-      "Home",
-      "Quarto",
-      "Info",
-      "Three Squares"
-    ]
-  },
-  {
-    "objectID": "Quarto/info/3squaresvt.html#eligibility",
-    "href": "Quarto/info/3squaresvt.html#eligibility",
-    "title": "Three Squares",
-    "section": "Eligibility",
-    "text": "Eligibility\nBasically, you can either get Three Squares because gross, or net monthly income: if you are under the limit for your household size.",
-    "crumbs": [
-      "Home",
-      "Quarto",
-      "Info",
-      "Three Squares"
-    ]
-  },
-  {
-    "objectID": "Quarto/info/3squaresvt.html#processing",
-    "href": "Quarto/info/3squaresvt.html#processing",
-    "title": "Three Squares",
-    "section": "Processing",
-    "text": "Processing\nIf eligible, multiply the max benefit for that household size minus 30% of the net monthly income, and that’s your benefit.",
-    "crumbs": [
-      "Home",
-      "Quarto",
-      "Info",
-      "Three Squares"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Benefits Estimator Overview and Roadmap",
-    "section": "",
-    "text": "Generally, this is intended as an interactive modernization of this presentation for both users and legislators. To see how each piece is calculated, check out the info tab in the table of contents on the left."
-  },
-  {
-    "objectID": "index.html#features",
-    "href": "index.html#features",
-    "title": "Benefits Estimator Overview and Roadmap",
-    "section": "Features",
-    "text": "Features\n\n\n\nFeature\nStatus\n\n\n\n\nCallouts\nPlanned\n\n\nUser-facing calculator\nPartial\n\n\nLegislator-facing calculator\nPlanned"
-  },
-  {
-    "objectID": "index.html#monthly-benefits",
-    "href": "index.html#monthly-benefits",
-    "title": "Benefits Estimator Overview and Roadmap",
-    "section": "Monthly Benefits",
-    "text": "Monthly Benefits\n\n\n\nBenefit\nStatus\n\n\n\n\n3 Squares\nComplete\n\n\nChild Care Subsidy\nComplete\n\n\nReach Up\nComplete\n\n\nLIHEAP\nPlanned\n\n\nLifeline\nPlanned\n\n\nVT Premium subsidy\nPlanned\n\n\nCost sharing VTHC\nPlanned\n\n\nMedicaid\nComplete"
-  },
-  {
-    "objectID": "index.html#tax-annual",
-    "href": "index.html#tax-annual",
-    "title": "Benefits Estimator Overview and Roadmap",
-    "section": "Tax / Annual",
-    "text": "Tax / Annual\n\n\n\nBenefit\nStatus\n\n\n\n\nFed. EITC\nComplete\n\n\nVT EITC\nComplete\n\n\nFed child tax credits\nComplete\n\n\nFed child/dependent care\nPlanned\n\n\nVT child/dependent care\nPlanned\n\n\nFed. Premium subsidy (ACA)\nPlanned\n\n\nRenter’s Rebate\nPlanned"
-  },
-  {
-    "objectID": "index.html#base",
-    "href": "index.html#base",
-    "title": "Benefits Estimator Overview and Roadmap",
-    "section": "Base",
-    "text": "Base\n\n\n\nBenefit\nStatus\n\n\n\n\nAfter-Tax Income\nComplete\n\n\nVT Income Tax\nComplete"
-  },
-  {
-    "objectID": "test.html",
-    "href": "test.html",
-    "title": "Benefits Cliff Estimator Notebook",
-    "section": "",
-    "text": "import sys, os\nfrom pathlib import Path\n\n_project_root = Path.cwd()\nwhile not (_project_root / \"src\").exists():\n    _project_root = _project_root.parent\nos.chdir(_project_root)",
-    "crumbs": [
-      "Home",
-      "Benefits Cliff Estimator Notebook"
+      "Medicaid"
     ]
   },
   {
@@ -176,16 +65,116 @@
     ]
   },
   {
-    "objectID": "Quarto/info/medicaid.html",
-    "href": "Quarto/info/medicaid.html",
-    "title": "Medicaid",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Benefits Estimator Overview and Roadmap",
     "section": "",
-    "text": "Sources\nALL 2025 Information\n\nGeneral Info\nEligibility\n\n\n\nSummary\nThough there’s structure and information set up about different tiers of eligibility and premiums, since 2014 in reality it seems like everyone has just used the main eligibility tables. For now, then, we just use this.\n\n\nLogic\nFor now, we’re just saying either you DO or DO NOT qualify for medicaid based on household composition by comparing gross monthly income to limit.",
+    "text": "Generally, this is intended as an interactive modernization of this presentation for both users and legislators. To see how each piece is calculated, check out the info tab in the table of contents on the left."
+  },
+  {
+    "objectID": "index.html#features",
+    "href": "index.html#features",
+    "title": "Benefits Estimator Overview and Roadmap",
+    "section": "Features",
+    "text": "Features\n\n\n\nFeature\nStatus\n\n\n\n\nCallouts\nPlanned\n\n\nUser-facing calculator\nComplete (with present benefits)\n\n\nLegislator-facing calculator\nPlanned"
+  },
+  {
+    "objectID": "index.html#monthly-benefits",
+    "href": "index.html#monthly-benefits",
+    "title": "Benefits Estimator Overview and Roadmap",
+    "section": "Monthly Benefits",
+    "text": "Monthly Benefits\n\n\n\nBenefit\nStatus\n\n\n\n\n3 Squares\nComplete\n\n\nChild Care Subsidy\nComplete\n\n\nReach Up\nComplete\n\n\nLIHEAP\nPlanned\n\n\nLifeline\nPlanned\n\n\nVT Premium subsidy\nPlanned\n\n\nCost sharing VTHC\nPlanned\n\n\nMedicaid\nComplete"
+  },
+  {
+    "objectID": "index.html#tax-annual",
+    "href": "index.html#tax-annual",
+    "title": "Benefits Estimator Overview and Roadmap",
+    "section": "Tax / Annual",
+    "text": "Tax / Annual\n\n\n\nBenefit\nStatus\n\n\n\n\nFed. EITC\nComplete\n\n\nVT EITC\nComplete\n\n\nFed child tax credits\nComplete\n\n\nFed child/dependent care\nPlanned\n\n\nVT child/dependent care\nPlanned\n\n\nFed. Premium subsidy (ACA)\nPlanned\n\n\nRenter’s Rebate\nPlanned"
+  },
+  {
+    "objectID": "index.html#base",
+    "href": "index.html#base",
+    "title": "Benefits Estimator Overview and Roadmap",
+    "section": "Base",
+    "text": "Base\n\n\n\nBenefit\nStatus\n\n\n\n\nAfter-Tax Income\nComplete\n\n\nVT Income Tax\nComplete"
+  },
+  {
+    "objectID": "Quarto/info/3squaresvt.html",
+    "href": "Quarto/info/3squaresvt.html",
+    "title": "Three Squares",
+    "section": "",
+    "text": "See https://dcf.vermont.gov/benefits/3SquaresVT for basic information.\nSee also Snap Eligibility for a more extensive walkthrough.\nThe Policy Manual is our ultimate source of truth",
     "crumbs": [
       "Home",
       "Quarto",
       "Info",
-      "Medicaid"
+      "Three Squares"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/3squaresvt.html#eligibility",
+    "href": "Quarto/info/3squaresvt.html#eligibility",
+    "title": "Three Squares",
+    "section": "Eligibility",
+    "text": "Eligibility\nBasically, you can either get Three Squares because gross, or net monthly income: if you are under the limit for your household size.",
+    "crumbs": [
+      "Home",
+      "Quarto",
+      "Info",
+      "Three Squares"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/3squaresvt.html#processing",
+    "href": "Quarto/info/3squaresvt.html#processing",
+    "title": "Three Squares",
+    "section": "Processing",
+    "text": "Processing\nIf eligible, multiply the max benefit for that household size minus 30% of the net monthly income, and that’s your benefit.",
+    "crumbs": [
+      "Home",
+      "Quarto",
+      "Info",
+      "Three Squares"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/ccfap.html",
+    "href": "Quarto/info/ccfap.html",
+    "title": "Child Care Subsidy",
+    "section": "",
+    "text": "Sources\n\nGeneral Info\nMax CCFA payouts in 2024\n\n\n\nAccepted Service Needs\n\nOption A: Every Caretaker must have at least one of these:\n\nA job\nself employed\nactively looking for work\nattending school or traiing\nparticipating in Reach UP\nhas special needs\n\nOption B: child has:\n\nhealth or developmental needs\nopen case with DCF and child care is part of safety plan\n\nOPTION C: family has:\n\nfamily is experiencing significant stress in shelter, safety, emotional stability, etc.\n\n\n\n\nLogic",
+    "crumbs": [
+      "Home",
+      "Quarto",
+      "Info",
+      "Child Care Subsidy"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/reachup.html",
+    "href": "Quarto/info/reachup.html",
+    "title": "Reach Up",
+    "section": "",
+    "text": "See here for all the rules\nSee Vermont Legislature Overview for easier to parse numbers.",
+    "crumbs": [
+      "Home",
+      "Quarto",
+      "Info",
+      "Reach Up"
+    ]
+  },
+  {
+    "objectID": "Quarto/info/reachup.html#caveats",
+    "href": "Quarto/info/reachup.html#caveats",
+    "title": "Reach Up",
+    "section": "Caveats",
+    "text": "Caveats\n\nThis logic *ignores",
+    "crumbs": [
+      "Home",
+      "Quarto",
+      "Info",
+      "Reach Up"
     ]
   }
 ]
