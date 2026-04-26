@@ -2,9 +2,9 @@ project:
   type: website
   output-dir: docs
   render:
-    - /*.qmd
-    - Quarto/*/*.qmd 
-    - Quarto/*.qmd
+    - "/*.qmd"
+    - "Quarto/*/*.qmd"
+    - "Quarto/*.qmd"
 
 website:
   title: "Benefits Estimator"
@@ -14,9 +14,11 @@ website:
   navbar:
     left:
       - href: index.qmd
+        text: Roadmap
+      - href: Quarto/main.qmd
         text: Home
-  
-format: 
+
+format:
   html:
     html-math-method: mathjax
     fig-responsive: true
@@ -24,10 +26,12 @@ format:
     toc-location: left
     theme: cosmo
     page-layout: full
-execute: 
+
+execute:
   cache: true
   python-path: src
 
 editor:
-    render-on-save: true
+  render-on-save: true
+
 bibliography: /home/fitsl/library/zotero/fjk_library.bib

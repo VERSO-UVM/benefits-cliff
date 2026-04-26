@@ -9,8 +9,9 @@ Generally, this is intended as an interactive modernization of
 [this presentation](https://legislature.vermont.gov/Documents/2018/WorkGroups/House%20General/Highlights/4%20-%20Minimum%20Wage%20%20The%20%E2%80%9CBenefits%20Cliff%E2%80%9D%20Presentation.pdf)
 for both users and legislators. To see how each piece is calculated, check out the `info` tab in the table of contents on the left.
 
-# Main site:
-
+# Try it!
+- [Link](Quarto/main.qmd)
+- Or, from any place, click the `Home` link on the navigation bar at hte top of the screen.
 
 # Key functionality
 - User-facing tool to estimate their own benefits and how it might change over time. 
@@ -20,8 +21,8 @@ for both users and legislators. To see how each piece is calculated, check out t
 
 
 # Selected Application Links 
-- (Reach UP and 3Squares)[https://dcf.vermont.gov/esd/applicants/mybenefits]
-- (Child Care Subsidy)[https://cddfamily.my.vermont.gov/s/] 
+- [Reach UP and 3Squares](https://dcf.vermont.gov/esd/applicants/mybenefits)
+- [Child Care Subsidy](https://cddfamily.my.vermont.gov/s/)
 
 
 # Road Map

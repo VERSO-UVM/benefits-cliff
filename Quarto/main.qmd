@@ -5,6 +5,4 @@ date: today
 description:  Current version of the project.
 ---
 
-Hello, world.
-
-<iframe src="../app/index.html" width="100%" height="800px" frameborder="0"></iframe>
+<iframe src="../app/index.html" width="100%" height="1200px" frameborder="0" style="width:100vw; margin-left: calc(-50vw + 50%);"></iframe>
