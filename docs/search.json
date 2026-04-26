@@ -1,5 +1,17 @@
 [
   {
+    "objectID": "Quarto/main.html",
+    "href": "Quarto/main.html",
+    "title": "Main",
+    "section": "",
+    "text": "Hello, world.",
+    "crumbs": [
+      "Home",
+      "Quarto",
+      "Main"
+    ]
+  },
+  {
     "objectID": "Quarto/info/medicaid.html",
     "href": "Quarto/info/medicaid.html",
     "title": "Medicaid",

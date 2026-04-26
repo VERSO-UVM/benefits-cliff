@@ -1,9 +1,10 @@
 ---
-title: Benefits Estimator Overview and Roadmap
+title: Main
 author: Fitz Koch
 date: today
-description:  Summary of the project and a roadmap of what will be included in it.
+description:  Current version of the project.
 ---
 
+Hello, world.
 
-<iframe src="app/index.html" width="100%" height="800px" frameborder="0"></iframe>
+<iframe src="../app/index.html" width="100%" height="800px" frameborder="0"></iframe>
