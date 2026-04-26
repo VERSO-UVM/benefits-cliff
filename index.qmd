@@ -3,6 +3,10 @@ title: Benefits Estimator Overview and Roadmap
 author: Fitz Koch
 date: today
 description:  Summary of the project and a roadmap of what will be included in it.
+format:
+  html:
+    theme: cosmo
+navbar: true
 ---
 
 Generally, this is intended as an interactive modernization of 

@@ -13,10 +13,11 @@ website:
     contents: auto
   navbar:
     left:
-      - href: index.qmd
-        text: Roadmap
       - href: Quarto/main.qmd
         text: Home
+      - href: index.qmd
+        text: Roadmap
+
 
 format:
   html:
